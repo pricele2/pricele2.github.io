@@ -1,0 +1,72 @@
+---
+title: "Planning to Plan"
+subtitle: "18 Nov. 2025"
+author: "Lauren E. Price"
+format: 
+  revealjs:
+    theme: default
+---
+
+# Introduction
+
+## Career Path of Problem Solving
+
+-   Sociology & Policy Coursework
+-   Research Assistant
+-   Quant Training
+-   Grant Manager, \> \$60M over 7 years
+-   Accidentally in Data Science
+
+## Fundamental Goals
+
+-   You know more than you think you do.
+-   Build your tolerance around disorientation
+-   Move towards being curious, clever... even nosy
+
+## Today, November 18
+
+-   Context and initial facts
+-   Scenario & task at hand
+-   Exploratory planning: Planning to plan
+
+# Scope
+
+## Houston ISD
+
+-   *Independent* defined
+-   Largest school district in Texas
+-   Over 300 facilities, over 20,000 employees
+-   [Geographically enormous](https://resources.finalsite.net/images/v1757703667/houstonisdorg/aq9uxdpyxkbs9ilajh2l/DistrictDivisionsSchoolsandAdministrativeFacilities20252026.pdf)
+-   \$2.1 billion annual budget, about 85% of which is payroll
+
+<!-- ## Geographically enormous -->
+
+<!-- ![](HISD-map-2526.pdf){fig-align="center" width="85%"} -->
+
+## Governance, 2014 / 2023
+
+-   Typically, school board members are elected by public. Board then hires/fires superintendent
+-   [Since June 2023](https://en.wikipedia.org/wiki/Houston_Independent_School_District_takeover): No local control
+-   State-appointed Board
+-   Superintendent, Chief Academic Officer, Chief Finance Officer
+-   State government Vs. Houston
+-   Stakeholder turnover, culture, changes everywhere
+
+## What's a public servant to do?
+
+-   Teacher turnover \> 30% annually
+-   Estimated \> 75% churn in [principals](https://www.houstonchronicle.com/news/houston-texas/education/hisd/article/state-takeover-hisd-numbers-enrollment-principals-20199238.php) since takeover
+-   January 2025: Promotion! Project management for CFO
+-   Data-driven changes over major functional areas
+-   HR, finance, accounts payable, facilities, warehouse/distribution, real estate
+
+## 
+
+## Plan, Do, Check, Act
+
+-   Versions of this [strategy](https://en.wikipedia.org/wiki/PDCA) around since the 1920s
+-   **Image** https://en.wikipedia.org/wiki/File:PDCA_Cycle.svg
+
+- By Karn-b - Karn Bulsuk (http://www.bulsuk.com). Originally published at http://www.bulsuk.com/2009/02/taking-first-step-with-pdca.html - Own work. Originally developed for Taking the First Step with PDCA, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=5236801 
+
+![Plan Do Check Act](https://en.wikipedia.org/wiki/File:PDCA_Cycle.svg){fig-align="center" width="65%"}
