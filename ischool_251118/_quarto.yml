@@ -1,6 +1,6 @@
 project:
   title: "ischool_251118"
-  output-dir: docs
+  # output-dir: docs
 
 editor: visual
 
