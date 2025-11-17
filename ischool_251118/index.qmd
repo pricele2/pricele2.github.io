@@ -1,6 +1,6 @@
 ---
 title: "Planning to Plan"
-subtitle: "18 Nov. 2025"
+subtitle: "Girl, Bye"
 author: "Lauren E. Price"
 format: 
   revealjs:
