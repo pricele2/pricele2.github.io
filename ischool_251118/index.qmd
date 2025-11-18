@@ -1,6 +1,6 @@
 ---
 title: "Planning to Plan"
-subtitle: "Girl, Bye"
+subtitle: "iSchool, 18 Nov. 2025"
 author: "Lauren E. Price"
 format: 
   revealjs:
@@ -11,62 +11,69 @@ format:
 
 ## Career Path of Problem Solving
 
--   Sociology & Policy Coursework
--   Research Assistant
--   Quant Training
--   Grant Manager, \> \$60M over 7 years
--   Accidentally in Data Science
+* BA and nonprofit sector work, children and families
+* Wanted to broaden my impact: MPP in Education
+  + Sociology & Policy Coursework, Research Assistant
+  + Quant Training in Stata/SPSS (2013+), GitHub, R
+* Grant Manager: $60M over 7 years
+  + Traditional research, financial management; KPIs
+* App Developer / Analyst / Data Science 
+  + Posit::conf(2021) scholarship, then [ISEA Fellowship](https://www.amplifylearn.ai/isea/)
+  + Leadership role starting in summer 2023
 
 ## Fundamental Goals
 
--   You know more than you think you do.
--   Build your tolerance around disorientation
--   Move towards being curious, clever... even nosy
+* You know more than you think you do.
+* Build your tolerance around disorientation
+* Move towards being curious, clever... even nosy
+* Takeaway: *Ask good questions, and you’re halfway there.*
 
-## Today, November 18
 
--   Context and initial facts
--   Scenario & task at hand
--   Exploratory planning: Planning to plan
+## Let's pretend. Thought experiment.
 
-# Scope
+* Context and initial facts
+* Scenario & task at hand
+* Exercise: exploring as the first stage of leading change 
+* **What do you need to learn, and what/who do you need to ask, to get your head around the scope of the project or problem?**
+
+# Framework & Scope
+
+## Plan, Do, Check, Act
+
+* Versions of [this strategy](https://en.wikipedia.org/wiki/PDCA) around since 1920s
+  + Continuous improvement, or 
+  + Implementing one large change
+* Plan to plan: Gather information
+* Discuss: What else should go into planning, based on the course materials?
 
 ## Houston ISD
 
--   *Independent* defined
--   Largest school district in Texas
--   Over 300 facilities, over 20,000 employees
--   [Geographically enormous](https://resources.finalsite.net/images/v1757703667/houstonisdorg/aq9uxdpyxkbs9ilajh2l/DistrictDivisionsSchoolsandAdministrativeFacilities20252026.pdf)
--   \$2.1 billion annual budget, about 85% of which is payroll
+* *Independent* defined
+* Largest school district in Texas
+* 321 sites, 273 schools, > 330 square miles
+* [Geographically enormous](https://resources.finalsite.net/images/v1757703667/houstonisdorg/aq9uxdpyxkbs9ilajh2l/DistrictDivisionsSchoolsandAdministrativeFacilities20252026.pdf)
+* \$2.1 billion annual budget: About 85% is payroll for 20,000 employees
 
 <!-- ## Geographically enormous -->
 
 <!-- ![](HISD-map-2526.pdf){fig-align="center" width="85%"} -->
 
-## Governance, 2014 / 2023
+## Context: New Leadership Governance
 
--   Typically, school board members are elected by public. Board then hires/fires superintendent
--   [Since June 2023](https://en.wikipedia.org/wiki/Houston_Independent_School_District_takeover): No local control
--   State-appointed Board
--   Superintendent, Chief Academic Officer, Chief Finance Officer
--   State government Vs. Houston
--   Stakeholder turnover, culture, changes everywhere
+* Typically: School board (9) elected by the public. Board then hires/fires superintendent.
+* Since June 2023, [this leadership change](https://en.wikipedia.org/wiki/Houston_Independent_School_District_takeover): No local control
+  + State-appointed Board, Superintendent, Chief Academic Officer, Chief Finance Officer
+  + Functionally a hostile takeover
+* Stakeholder turnover & attrition since attrition:
+  + Teacher turnover > 30% annually
+  + Estimate at least 75% turnover by [principals](https://www.houstonchronicle.com/news/houston-texas/education/hisd/article/state-takeover-hisd-numbers-enrollment-principals-20199238.php)
+  
+## Your Turn: Speculate
 
-## What's a public servant to do?
-
--   Teacher turnover \> 30% annually
--   Estimated \> 75% churn in [principals](https://www.houstonchronicle.com/news/houston-texas/education/hisd/article/state-takeover-hisd-numbers-enrollment-principals-20199238.php) since takeover
--   January 2025: Promotion! Project management for CFO
--   Data-driven changes over major functional areas
--   HR, finance, accounts payable, facilities, warehouse/distribution, real estate
-
-## 
-
-## Plan, Do, Check, Act
-
--   Versions of this [strategy](https://en.wikipedia.org/wiki/PDCA) around since the 1920s
--   **Image** https://en.wikipedia.org/wiki/File:PDCA_Cycle.svg
-
-- By Karn-b - Karn Bulsuk (http://www.bulsuk.com). Originally published at http://www.bulsuk.com/2009/02/taking-first-step-with-pdca.html - Own work. Originally developed for Taking the First Step with PDCA, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=5236801 
-
-![Plan Do Check Act](https://en.wikipedia.org/wiki/File:PDCA_Cycle.svg){fig-align="center" width="65%"}
+* **How does this affect context for leading change?**
+  + Pros, Cons, Opportunities, Risks
+  + Which authors or models could help us here? 
+* Project management for CFO
+  + Leading data-driven changes over major functional areas
+  + Payroll, finance, accounts payable, facilities, real estate, warehouse and distribution, nutrition (13 Senior EDs)
+* Your first project: Move the warehouse.
