@@ -1,9 +1,19 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-About this site
+Data & Policy Analytics Leader \| K-12 Education Strategy \| Causal Inference, Forecasting & Enrollment Modeling \| Grants & Financial Stewardship \| Data Governance \| Program Evaluation \| Research Partnerships
 
-```{r}
-1 + 1
-```
+Data and policy leader with 10+ years of experience using analytics, causal inference, and strategic planning to support decision-making in large K-12 school systems.  
+
+My work sits at the intersection of education policy, finance, data science, and operational strategy. I translate complex administrative data into insights that help districts allocate resources, expand program access, strengthen compliance, and improve student outcomes.  
+
+At Houston ISD, I have led analytics initiatives supporting enrollment strategy, pre-K expansion, staffing models, capital planning, grant implementation, and research partnerships. My work has helped district leaders make decisions affecting hundreds of schools, millions of student records, and major public investments.  
+
+**Selected impact includes:** • Led enrollment and retention modeling that preserved \$65.7M in state funding by identifying strategies to retain 4,570 students. • Directed analytics informing pre-K expansion across 160+ campuses, increasing classroom capacity and improving access for families. • Supported a RAND randomized controlled trial of Zearn Math across 32,000+ students and 845 teachers. • Managed \$62.3M in federal grant programs with compliant reporting and zero audit findings. • Built reproducible analytics pipelines and decision dashboards used by district leadership for staffing, program evaluation, and capital planning.  
+
+My background combines advanced statistical analysis, program evaluation, financial management, and policy implementation. I regularly work with large administrative datasets covering millions of student records and apply methods such as clustering, simulation modeling, causal inference, and forecasting.  
+
+I have also authored multiple program evaluations and research publications focused on STEM education, student outcomes, and teacher incentives, and have collaborated with universities and national research organizations.  
+
+I am motivated by a simple goal: use rigorous data analysis and thoughtful questions to help education systems make better strategic decisions that expand opportunity and improve outcomes for students.  

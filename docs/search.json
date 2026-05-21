@@ -11,27 +11,27 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Hello World\n\n\n\nQuarto\n\nR\n\nR-Ladies\n\nCommunity\n\n\n\nSubtitle, lots of characters\n\n\n\nLauren Price\n\n\nMay 21, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "Hello World\n\n\n\nQuarto\n\nR\n\nR-Ladies+\n\nCommunity\n\n\n\nBig thanks to Sam Shanny-Csik!\n\n\n\nLauren Price\n\n\nMay 21, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About Me",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Lauren Price",
-    "section": "",
-    "text": "Data and policy leader with 10+ years of experience using analytics, causal inference, and strategic planning to support decision-making in large K-12 school systems.\nMy work sits at the intersection of education policy, finance, data science, and operational strategy. I translate complex administrative data into insights that help districts allocate resources, expand program access, strengthen compliance, and improve student outcomes.\nMy background combines advanced statistical analysis, program evaluation, financial management, and policy implementation. I regularly work with large administrative datasets covering millions of student records and apply methods such as clustering, simulation modeling, causal inference, and forecasting.\nI have also authored multiple program evaluations and research publications focused on STEM education, student outcomes, and teacher incentives, and have collaborated with universities and national research organizations.\nI am motivated by a simple goal: use rigorous data analysis and thoughtful questions to help education systems make better strategic decisions that expand opportunity and improve outcomes for students."
+    "text": "Data & Policy Analytics Leader | K-12 Education Strategy | Causal Inference, Forecasting & Enrollment Modeling | Grants & Financial Stewardship | Data Governance | Program Evaluation | Research Partnerships\nData and policy leader with 10+ years of experience using analytics, causal inference, and strategic planning to support decision-making in large K-12 school systems.\nMy work sits at the intersection of education policy, finance, data science, and operational strategy. I translate complex administrative data into insights that help districts allocate resources, expand program access, strengthen compliance, and improve student outcomes.\nAt Houston ISD, I have led analytics initiatives supporting enrollment strategy, pre-K expansion, staffing models, capital planning, grant implementation, and research partnerships. My work has helped district leaders make decisions affecting hundreds of schools, millions of student records, and major public investments.\nSelected impact includes: • Led enrollment and retention modeling that preserved $65.7M in state funding by identifying strategies to retain 4,570 students. • Directed analytics informing pre-K expansion across 160+ campuses, increasing classroom capacity and improving access for families. • Supported a RAND randomized controlled trial of Zearn Math across 32,000+ students and 845 teachers. • Managed $62.3M in federal grant programs with compliant reporting and zero audit findings. • Built reproducible analytics pipelines and decision dashboards used by district leadership for staffing, program evaluation, and capital planning.\nMy background combines advanced statistical analysis, program evaluation, financial management, and policy implementation. I regularly work with large administrative datasets covering millions of student records and apply methods such as clustering, simulation modeling, causal inference, and forecasting.\nI have also authored multiple program evaluations and research publications focused on STEM education, student outcomes, and teacher incentives, and have collaborated with universities and national research organizations.\nI am motivated by a simple goal: use rigorous data analysis and thoughtful questions to help education systems make better strategic decisions that expand opportunity and improve outcomes for students."
   },
   {
     "objectID": "blog/hello-world/index.html",
     "href": "blog/hello-world/index.html",
     "title": "Hello World",
     "section": "",
-    "text": "Here is where I will start writing my actual blog post content…\n\n\n\nCitationBibTeX citation:@online{price2026,\n  author = {Price, Lauren},\n  title = {Hello {World}},\n  date = {2026-05-21},\n  url = {https://pricele2.github.io/blog/hello-world/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nPrice, Lauren. 2026. “Hello World.” May 21, 2026. https://pricele2.github.io/blog/hello-world/."
+    "text": "Gosh am I grateful for the R-Ladies+ community! Thanks to the Santa Barbara crew of this incredible global network, I came across a terrific tutorial from Sam Shanny-Csik: “Creating your personal website using Quarto” published at URL.\nI’ve been in the weeds with Quarto for about a year, iterating resumes and cover letters during my job search. And of course Jorge and I used Quarto extensively during our time together with HISD (teamwork!). But I was a little reluctant to build out a Quarto website and deploy through GitHub pages until I found Sam’s resources.\nDo I need to do a bit more work in updating fonts and colors? Probably.\n\n\n\nCitationBibTeX citation:@online{price2026,\n  author = {Price, Lauren},\n  title = {Hello {World}},\n  date = {2026-05-21},\n  url = {https://pricele2.github.io/blog/hello-world/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nPrice, Lauren. 2026. “Hello World.” May 21, 2026. https://pricele2.github.io/blog/hello-world/."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Lauren Price",
+    "section": "",
+    "text": "Data and policy leader with 10+ years of experience using analytics, causal inference, and strategic planning to support decision-making in large K-12 school systems.\nMy work sits at the intersection of education policy, finance, data science, and operational strategy. I translate complex administrative data into insights that help districts allocate resources, expand program access, strengthen compliance, and improve student outcomes.\nI am motivated by a simple goal: use rigorous data analysis and thoughtful questions to help education systems make better strategic decisions that expand opportunity and improve outcomes for students."
   }
 ]

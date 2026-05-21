@@ -1,17 +1,22 @@
 ---
 title: "Hello World"
-description: "Subtitle, lots of characters"
+description: "Big thanks to Sam Shanny-Csik!"
 author:
   - name: Lauren Price
     url: https://pricele2.github.io/
     # affiliation: R-Ladies Santa Barbara
     # affiliation-url: https://www.meetup.com/rladies-santa-barbara/
 date: 05-21-2026
-categories: [Quarto, R, R-Ladies, Community]
+categories: [Quarto, R, R-Ladies+, Community]
 citation:
   url: https://pricele2.github.io/blog/hello-world/
-image: positconf2022-selfie.jpg  # lives inside your post’s subdirectory
+image: RLadiesSB_hex.jpeg # lives inside your post’s subdirectory
 draft: false
 ---
 
-Here is where I will start writing my actual blog post content...
+Gosh am I grateful for the R-Ladies+ community! Thanks to the Santa Barbara crew of this incredible global network, I came across a terrific tutorial from [Sam Shanny-Csik](https://samanthacsik.github.io/): "Creating your personal website using Quarto"
+[published at URL](https://samanthacsik.github.io/RLadiesSB-quarto-websites/).
+
+I've been in the weeds with Quarto for about a year, iterating resumes and cover letters during my job search. And of course Jorge and I used Quarto extensively during our time together with HISD (teamwork!). But I was a little reluctant to build out a Quarto website and deploy through GitHub pages until I found Sam's resources. 
+
+Do I need to do a bit more work in updating fonts and colors? Probably. 

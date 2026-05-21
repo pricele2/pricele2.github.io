@@ -22,8 +22,4 @@ Data and policy leader with 10+ years of experience using analytics, causal infe
 
 My work sits at the intersection of education policy, finance, data science, and operational strategy. I translate complex administrative data into insights that help districts allocate resources, expand program access, strengthen compliance, and improve student outcomes.
 
-My background combines advanced statistical analysis, program evaluation, financial management, and policy implementation. I regularly work with large administrative datasets covering millions of student records and apply methods such as clustering, simulation modeling, causal inference, and forecasting.
-
-I have also authored multiple program evaluations and research publications focused on STEM education, student outcomes, and teacher incentives, and have collaborated with universities and national research organizations.
-
 I am motivated by a simple goal: use rigorous data analysis and thoughtful questions to help education systems make better strategic decisions that expand opportunity and improve outcomes for students.
