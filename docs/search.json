@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "pricele2.github.io",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Favorite Resources",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Lorem ipsum sit dolor amet. Coming soon!"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Hello World\n\n\n\nQuarto\n\nR\n\nR-Ladies\n\nCommunity\n\n\n\nSubtitle, lots of characters\n\n\n\nLauren Price\n\n\nMay 21, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -12,5 +19,19 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Lauren Price",
+    "section": "",
+    "text": "Data and policy leader with 10+ years of experience using analytics, causal inference, and strategic planning to support decision-making in large K-12 school systems.\nMy work sits at the intersection of education policy, finance, data science, and operational strategy. I translate complex administrative data into insights that help districts allocate resources, expand program access, strengthen compliance, and improve student outcomes.\nMy background combines advanced statistical analysis, program evaluation, financial management, and policy implementation. I regularly work with large administrative datasets covering millions of student records and apply methods such as clustering, simulation modeling, causal inference, and forecasting.\nI have also authored multiple program evaluations and research publications focused on STEM education, student outcomes, and teacher incentives, and have collaborated with universities and national research organizations.\nI am motivated by a simple goal: use rigorous data analysis and thoughtful questions to help education systems make better strategic decisions that expand opportunity and improve outcomes for students."
+  },
+  {
+    "objectID": "blog/hello-world/index.html",
+    "href": "blog/hello-world/index.html",
+    "title": "Hello World",
+    "section": "",
+    "text": "Here is where I will start writing my actual blog post content…\n\n\n\nCitationBibTeX citation:@online{price2026,\n  author = {Price, Lauren},\n  title = {Hello {World}},\n  date = {2026-05-21},\n  url = {https://pricele2.github.io/blog/hello-world/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nPrice, Lauren. 2026. “Hello World.” May 21, 2026. https://pricele2.github.io/blog/hello-world/."
   }
 ]

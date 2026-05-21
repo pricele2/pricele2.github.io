@@ -1,11 +1,29 @@
 ---
-title: "pricele2.github.io"
+title: "Lauren Price"
+image: images/2021_LP_headshot.jpg
+toc: false
+about: 
+  template: trestles
+  image-shape: round
+  image-width: 17em
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/lauren-price-data
+    - text: GitHub
+      href: https://github.com/pricele2
+    - text: Calendly
+      href: https://calendly.com/lauren-3-price/quick-chat
+    - text: Email
+      href: mailto:lauren.3.price@gmail.com
+      
 ---
 
-This is a Quarto website.
+Data and policy leader with 10+ years of experience using analytics, causal inference, and strategic planning to support decision-making in large K-12 school systems. 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+My work sits at the intersection of education policy, finance, data science, and operational strategy. I translate complex administrative data into insights that help districts allocate resources, expand program access, strengthen compliance, and improve student outcomes.
 
-```{r}
-1 + 1
-```
+My background combines advanced statistical analysis, program evaluation, financial management, and policy implementation. I regularly work with large administrative datasets covering millions of student records and apply methods such as clustering, simulation modeling, causal inference, and forecasting.
+
+I have also authored multiple program evaluations and research publications focused on STEM education, student outcomes, and teacher incentives, and have collaborated with universities and national research organizations.
+
+I am motivated by a simple goal: use rigorous data analysis and thoughtful questions to help education systems make better strategic decisions that expand opportunity and improve outcomes for students.

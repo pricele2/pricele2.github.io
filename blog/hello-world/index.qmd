@@ -1,0 +1,17 @@
+---
+title: "Hello World"
+description: "Subtitle, lots of characters"
+author:
+  - name: Lauren Price
+    url: https://pricele2.github.io/
+    # affiliation: R-Ladies Santa Barbara
+    # affiliation-url: https://www.meetup.com/rladies-santa-barbara/
+date: 05-21-2026
+categories: [Quarto, R, R-Ladies, Community]
+citation:
+  url: https://pricele2.github.io/blog/hello-world/
+image: positconf2022-selfie.jpg  # lives inside your post’s subdirectory
+draft: false
+---
+
+Here is where I will start writing my actual blog post content...

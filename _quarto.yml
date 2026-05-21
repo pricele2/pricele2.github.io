@@ -3,12 +3,16 @@ project:
   output-dir: docs
 
 website:
-  title: "pricele2.github.io"
+  title: "Lauren Price"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: resources.qmd
+        text: Resources
+      - href: blog.qmd # listing page
+        text: Blog
 
 format:
   html:
@@ -17,6 +21,4 @@ format:
       - brand
     css: styles.css
     toc: true
-
-
-
+    page-layout: full
