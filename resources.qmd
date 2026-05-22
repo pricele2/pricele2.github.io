@@ -2,4 +2,18 @@
 title: "Favorite Resources"
 ---
 
-Lorem ipsum sit dolor amet. Coming soon! 
+## Data-Related Content That's Worth My Time
+
+Because sometimes a magpie-brain needs a shiny little treat.
+
+**RDM Weekly, from Crystal Lewis (Free)**\
+Substack-hosted free newsletter, [weekly roundup](https://rdmweekly.substack.com/) of resources for Research Data Management. Cute memes, too. Author of *Data Management in Large-Scale Education Research*, a must-have for folks in my field. I had the good fortune to meet Crystal at a conference in 2018 and she is an absolute gem. 
+
+**R-Bloggers (Free)**\
+Near-daily [news and tutorials](https://www.r-bloggers.com/) contributed by hundreds of individual bloggers and aggregated in one place. I'm convinced no one actually reads every post, but a quick skim of the titles will often bring me a gem I wouldn't have come across otherwise. Note that their 'R Jobs' is wildly, comically out of date. 
+
+**Census Updates, from U.S. Census Bureau (Free)**\
+Occasional [email updates](https://public.govdelivery.com/accounts/USCENSUS/subscriber/new?) and press releases regarding Census data products, workshops, and resources. I've taken part in a few great webinars thanks to these communications, as they're not widely advertised otherwise. 
+
+**JournalClub (\$)**\
+Daily newsletter with embedded video, each  [summarizing](https://journalclub.io/episodes) a recent journal article related to machine learning, modeling, software development, and MANY adjacent topics. I don't get to all of them, but I do really like seeing how people in other fields are solving their emerging problems even if I have to draw heavily on context clues for the specialized vocabulary. They also very deliberately are *not* using AI tools to create these summaries. And the writing itself is SO efficient and straightforward. 
