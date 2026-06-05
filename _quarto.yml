@@ -13,7 +13,8 @@ website:
         text: Resources
       - href: blog.qmd # listing page
         text: Blog
-
+      - href: publications.qmd
+        text: Publications
 format:
   html:
     theme:

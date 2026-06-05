@@ -1,5 +1,6 @@
 ---
 title: "Lauren Price"
+# image: images/positconf2022-selfie.jpg
 image: images/2021_LP_headshot.jpg
 toc: false
 about: 

@@ -1,0 +1,38 @@
+---
+title: "Select Publications"
+format: html
+---
+
+Pane, J., Doss, C., Todd, I., & Seaman, D. (2025, June). **Efficacy of Zearn Math over two years in grades 3 to 5: An experiment in Texas.** (EdWorkingPaper: 25-1211). Retrieved [online](https://edworkingpapers.com/sites/default/files/ai25-1211.pdf) from Annenberg Institute at Brown University.
+
+**Price, L.**, & Islam, F. (2025, February). **Technical Documentation: Local Norms & GT Matrix Scores for Students Entering Kindergarten in SY25-26**. HISD: Internal Publication.
+
+**Price, L.**, & Lasode, M. (2024, June). **Renew HISD: Pre-K Demand Analysis**. HISD: Internal Publication. 
+
+**Price, L.** & Martinez, J. (2024, June). **Enrollment Incentives**. HISD: Data Science. Retrieved 5 June 2026 from [Houston Chronicle](https://www.documentcloud.org/documents/25540217-hisd-enrollment-incentives/).
+
+**Price, L.** & Martinez, J. (2024, May). **Enrollment Attrition & Charter Exit**. HISD: Data Science. Retrieved 5 June 2026 from [Houston Chronicle](https://www.documentcloud.org/documents/25557269-enrollmentattrition-10may2024/).
+
+**Price, L**., Lasode, M., & Powers, K. (2023, December). **Memo To Chief Financial Officer: FY25 Forecasting Models for Student Average Daily Attendance.** HISD: Internal Memo.
+
+Lasode, M., **Price, L.**, Abdoli, M., & Hovey, I. (2022, July). **2021-2022 Campus Demographic Report**.  HISD: Research and Accountability. Retrieved 5 June 2026 from [houstonisd.org](https://resources.finalsite.net/images/v1749058675/houstonisdorg/mnnzlrapn8lsivlikavn/Campus_Demographic_Report_2021-2022.pdf) and  [Tableau](https://public.tableau.com/views/CampusDemographicReport2021-22ZonedCampuses/ZonedCampuses).
+
+**Price, L**., & Scuello, M. (2022, May). **Evidence of Promise from the Magnet Schools Assistance Program: Recruiting Students to HISD’s Secondary STEM Magnet Schools.** HISD: Internal Publication.
+
+**Price, L.**, & Matney, A. (2021, December). **Memo to Executive Officer, Student Support: Additional Homeless Students Identified as Eligible for Services Under McKinney-Vento**. HISD: Internal Publication.
+
+Aulicino, C., Rinehart, C., & **Price, L.** (2021, October). **Secondary STEM Magnet Programs Study: Year 2\.** Metis Associates: Internal Publication for HISD.
+
+Aulicino, C., Rinehart, C., & **Price, L.** (2020, September). **Secondary STEM Magnet Program Study: Year 1\.** Metis Associates: Internal Publication for HISD.
+
+**Price, L.**, Christian, M., & Stevens, C. (2018a). **A Matched-Comparison Analysis of Math and Science STAAR Scores: Teacher Incentive Fund STEM Grant in Houston ISD**. HISD: Research and Accountability. ERIC Number ED603680: Retrieved 5 June 2026 from [eric.ed.gov](https://eric.ed.gov/?q=ED603678&id=ED603680).
+
+**Price, L.**, Cramer, E., Milanowski, A., Mader, J., & Stevens, C. (2018b). ***A Human Capital Approach to Improving STEM Education: Teacher Incentive Fund STEM Grant in Houston ISD.*** HISD: Research and Accountability. ERIC Number ED603681: Retrieved 5 June 2026 from  [eric.ed.gov](https://eric.ed.gov/?q=ED603678&id=ED603681).
+
+**Price, L.**, Provencher, S., & Stevens, C. (2018c). ***A Descriptive Overview: Teacher Incentive Fund STEM Grant in Houston ISD***. HISD: Research and Accountability. ERIC Number ED603678: Retrieved 5 June 2026 from  [eric.ed.gov](https://eric.ed.gov/?q=ED603678&id=ED603678).
+
+**Price, L.**, & Stevens, C. (2017). ***Teacher Incentive Fund, Cohort 3—Looking Back, Around, And Ahead: HISD’s Viewfinder For Teacher And Leader Effectiveness***. HISD: Research and Accountability.
+
+**Price, L.**, Jordan, S., & Stevens, C. (2016, January). ***Preferences and Perspectives on Teacher Compensation, 2014-2015***. HISD: Internal Publication.
+
+**Price, L.** (2014). ***Parents and Teachers in Title I Schools: A Critical Race Theory Analysis of Parent Engagement*** \[Unpublished master’s thesis\]. Peabody College of Education and Human Development, Vanderbilt University.
