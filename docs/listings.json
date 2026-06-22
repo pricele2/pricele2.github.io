@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blog/census-workshop/index.html",
       "/blog/hello-world/index.html"
     ]
   }

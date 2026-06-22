@@ -1,0 +1,266 @@
+---
+title: Working with US Census Data
+date: 2026-06-24
+author: Lauren Price
+
+format: 
+  revealjs:
+      theme: serif
+      slide-number: true
+editor: visual
+toc: false
+---
+
+## Hello Baker Ripley!
+
+::: r-fit-text
+**THANK YOU** for having me!
+
+Data and policy leader with over a decade of experience using analytics, data science, and strategic planning to support decision-making in large K-12 school systems
+
+My work sits at the intersection of education policy, finance, data science, and program strategy.
+
+Martha O'Bryan Center in Nashville, Tennessee
+
+Diversity Scholarship to Posit::Conf(2022) in DC
+:::
+
+![Lauren at Posit::Conf 2022](/images/positconf2022-selfie.JPG)
+
+::: notes
+On a personal angle,
+
+I earned my degrees from Notre Dame and Vanderbilt
+
+I’ve lived in six states, including Texas for twelve years after grad school
+
+My extended family hails from both New Jersey and New Mexico
+:::
+
+## The Census Bureau
+
+::: r-fit-text
+Constitution requires a headcount of *all persons* every 10 years
+
+First purpose: Apportionment of seats in the House of Representatives
+
+- 1790: First national count — just six questions
+
+- 1902: Congress establishes a permanent agency
+
+- 2026: Bureau lives within the Department of Commerce
+
+Sometimes mundane, sometimes controversial!
+
+- Slavery, citizenship, genealogy
+
+- Indigenous Peoples and LGBTQ+ civil rights
+
+- Equitable representation and gerrymandering\
+:::
+
+## Diverse Data, Many Purposes
+
+::: r-fit-text
+Today, the Census Bureau conducts over 130 different surveys.
+
+Each data product has its own life cycle and its own peculiar characteristics.
+
+- **Decennial Census of Population and Housing (10-Year).** As required by US constitution, used for redistricting and apportionment
+
+- **American Community Survey (Annual).** The social and economic needs of communities, across many demographic characteristics.
+
+- **Small Area Income and Poverty Estimates (Annual).** Income and poverty statistics for all school districts, counties, and states.
+
+- **Current Population Survey (Monthly).** How we work — types of jobs held, wages, hours worked.
+
+Census data is used to distribute **more than \$675 billion** in federal funds to local, state, and tribal governments each year.
+:::
+
+::: notes
+- **Economic Census (5-Year).** Businesses & economy at national, state, and local levels.
+
+- **Census of Governments (3-Year).** State/local government employment and finances.
+
+- **Small Area Health Insurance Estimates.**
+
+Plus, States and communities use census data to allocate funding for neighborhood improvements, public health, education, transportation, and more.
+
+Sources: https://www.census.gov/programs-surveys/sis/about/students101.html
+
+TRANSITION: LOTS of data! Can be pretty overwhelming
+
+<!-- By default a revealjs slide is 1050px wide by 700px tall. -->
+:::
+
+## Geographies Start with Blocks
+
+[![Census geographies are built from Blocks, aggregated to Counties to States](/images/census-work/census-geo-levels.jpg){fig-alt="Hierarchy of US Census geographies, with Nation at the top and Blocks at the very bottom" fig-align="center" width="757"}](https://www2.census.gov/geo/pdfs/reference/geodiagram.pdf)
+
+## Block Groups and Tracts
+
+::: r-fit-text
+[Geographies for BR Central](https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=4450%20Harrisburg%20Blvd%2C%20Houston%2C%20Texas&benchmark=4&vintage=4)
+**GEOID:** Unique ID or "name" for each census block. **48 201 310400 3032**
+
+**FIPS:** Five-digit code for each unique state (**48**) and county (**201**).
+
+**Tract:** Ideally contain about 4,000 people and 1,600 housing units. **Tract 310400**
+
+**Block Group:** A subdivision of a census tract; generally contain between 600 and 3,000 people and 240 and 1,200 housing units. The smallest unit for which the Bureau tabulates data for *any other survey*. **Block Groups 1, 2, and 3**
+
+**Block:** The smallest geographic unit for which the Bureau tabulates *decennial* census data. In cities, many blocks correspond to individual city blocks bounded by streets. **Block 3032**
+
+Source: [Glossary at Census.gov](https://www.census.gov/glossary/)
+:::
+
+## Visualize the GEOID
+
+![Map of GEOID 482013104003032](/images/census-work/block-group-tract-BR.jpg){fig-alt="Greyscale line map from data.census.gov showing a highlighted section of city blocks" fig-align="left" width="717"}
+
+## Access Outside API
+
+::: r-fit-text
+Online Data Products:
+
+- [Find Geographies for One Address](https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?form)
+
+- [Pre-Built Profiles](https://data.census.gov/profile)
+
+- [Fact Sheets](https://www.census.gov/library/fact-sheets.html)
+
+- [Quick Facts](https://www.census.gov/quickfacts/)
+
+- [Survey Explorer](https://www.census.gov/data/data-tools/survey-explorer/)
+
+- [Data.Census.Gov](https://data.census.gov/)
+
+Free Learning Resources:
+
+- [Census Academy Courses/Webinars](https://www.census.gov/data/academy.html)
+
+- [National Historic Geographic Info System](https://www.nhgis.org/)
+
+Advantages of API — Minimize chaos & navigation clutter
+:::
+
+## Let's Start!
+
+Materials:
+
+- Slides and scripts published at [pricele2.github.io/blog](https://pricele2.github.io/blog.html)
+
+- API Key registered to Baker Ripley, via Jorge Martinez
+
+- CSVs at [my Google Drive URL](https://drive.google.com/drive/folders/1XAhhvJAgn961SCvWq33m_gE9SSNdR9k7?usp=sharing)
+
+## Open Your Program
+
+```{r}
+#| label: install.library
+#| eval: true
+#| echo: true
+#| code-overflow: wrap
+#| output: false
+# Do this first
+# install.packages(c("tidycensus", "mapview", "tidygeocoder", "ipumsr", "censusapi", "tidyverse"))
+
+# Run this instead every time afterwards
+my_packages <- c("tidycensus", "mapview", "tidygeocoder", "ipumsr", "censusapi", "tidyverse")
+lapply(my_packages, library, character.only = TRUE)
+```
+
+### Set Up Census API Key
+
+```{r}
+#| label: check.api.key
+#| eval: true
+#| echo: true
+#| code-overflow: wrap
+#| output: true
+# Check to see if you already have a CENSUS_KEY or CENSUS_API_KEY saved
+# If so, no further action is needed
+get_api_key()
+```
+
+```{r}
+#| label: set.api.key
+#| eval: false
+#| echo: true
+#| code-overflow: wrap
+#| output: false
+# If not, add your key to your Renviron file
+census_api_key("PASTEYOURKEYHERE", overwrite = FALSE, install = TRUE)
+
+# Reload .Renviron the first time
+readRenviron("~/.Renviron")
+
+# Confirm that the expected key is output in your R console
+get_api_key()
+```
+
+## Harris County / Decennial
+
+```{r}
+#| label: load.vars
+#| eval: true
+#| echo: true
+#| code-overflow: wrap
+#| output: true
+#| output-location: slide
+
+# From the tidycensus package:
+# Demographic and Housing Characteristics File ("Decennial Census")
+vars_dhc = load_variables(2020, dataset = "dhc")
+View(vars_dhc)
+```
+
+```{r}
+#| label: harris.blocks
+#| eval: true
+#| echo: true
+#| code-overflow: wrap
+#| output: true
+#| output-location: slide
+
+harris_blocks = get_decennial(
+  geography = "block group", 
+  variables = "PCT13_001N", # SEX BY AGE FOR THE POPULATION IN HOUSEHOLDS
+  state = "TX",
+  county = "Harris County",
+  sumfile = "dhc",
+  year = 2020,
+  geometry = FALSE, 
+  show_call = TRUE
+)
+
+View(harris_blocks)
+```
+
+## Block-Level: Decennial Only
+
+https://walker-data.com/tidycensus/articles/basic-usage.html#geography-in-tidycensus
+
+## Census Geographies vs Others
+
+School Districts
+
+ZIP Codes
+
+Municipal Districts (Watershed)
+
+## censusapi::listCensusApis()
+
+getOption("max.print")
+
+options(max.print = 50000)
+
+local_api_list = censusapi::listCensusApis() View(local_api_list)
+
+## Counties served by Workforce Solutions
+
+Listed at https://www.wrksolutions.com/regional-economic-data/quarterly-employment-reports-by-county
+
+## Behavior Risk Factor Surveillance System (BRFSS)
+
+Glossary at https://data.cdc.gov/Survey-Data/Behavior-Risk-Factor-Surveillance-System-BRFSS-Glo/5amh-5sx3/about_data

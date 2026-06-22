@@ -39,7 +39,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Hello World\n\n\n\nQuarto\n\nR\n\nR-Ladies+\n\nCommunity\n\n\n\nBig thanks to Sam Shanny-Csik!\n\n\n\nLauren Price\n\n\nMay 21, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "Working with US Census Data\n\n\n\n\n\n\nLauren Price\n\n\nJun 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nHello World\n\n\n\nQuarto\n\nR\n\nR-Ladies+\n\nCommunity\n\n\n\nBig thanks to Sam Shanny-Csik!\n\n\n\nLauren Price\n\n\nMay 21, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "publications.html",
@@ -47,5 +47,271 @@
     "title": "Select Publications",
     "section": "",
     "text": "Pane, J., Doss, C., Todd, I., & Seaman, D. (2025, June). Efficacy of Zearn Math over two years in grades 3 to 5: An experiment in Texas. (EdWorkingPaper: 25-1211). Retrieved online from Annenberg Institute at Brown University.\nPrice, L., & Islam, F. (2025, February). Technical Documentation: Local Norms & GT Matrix Scores for Students Entering Kindergarten in SY25-26. HISD: Internal Publication.\nPrice, L., & Cortez, J. (2024). Technical Documentation for IES Award R305A230170, Efficacy of Zearn Math. HISD: Data Science & Analytics.\nPrice, L., & Lasode, M. (2024, June). Renew HISD: Pre-K Demand Analysis. HISD: Internal Publication.\nPrice, L. & Martinez, J. (2024, June). Enrollment Incentives. HISD: Data Science. Retrieved 5 June 2026 from Houston Chronicle.\nPrice, L. & Martinez, J. (2024, May). Enrollment Attrition & Charter Exit. HISD: Data Science. Retrieved 5 June 2026 from Houston Chronicle.\nPrice, L., Lasode, M., & Powers, K. (2023, December). Memo To Chief Financial Officer: FY25 Forecasting Models for Student Average Daily Attendance. HISD: Internal Memo.\nLasode, M., Price, L., Abdoli, M., & Hovey, I. (2022, July). 2021-2022 Campus Demographic Report. HISD: Research and Accountability. Retrieved 5 June 2026 from houstonisd.org and Tableau.\nPrice, L., & Scuello, M. (2022, May). Evidence of Promise from the Magnet Schools Assistance Program: Recruiting Students to HISD’s Secondary STEM Magnet Schools. HISD: Internal Publication.\nPrice, L., & Matney, A. (2021, December). Memo to Executive Officer, Student Support: Additional Homeless Students Identified as Eligible for Services Under McKinney-Vento. HISD: Internal Publication.\nAulicino, C., Rinehart, C., & Price, L. (2021, October). Secondary STEM Magnet Programs Study: Year 2. Metis Associates: Internal Publication for HISD.\nAulicino, C., Rinehart, C., & Price, L. (2020, September). Secondary STEM Magnet Program Study: Year 1. Metis Associates: Internal Publication for HISD.\nPrice, L., Christian, M., & Stevens, C. (2018a). A Matched-Comparison Analysis of Math and Science STAAR Scores: Teacher Incentive Fund STEM Grant in Houston ISD. HISD: Research and Accountability. ERIC Number ED603680: Retrieved 5 June 2026 from eric.ed.gov.\nPrice, L., Cramer, E., Milanowski, A., Mader, J., & Stevens, C. (2018b). A Human Capital Approach to Improving STEM Education: Teacher Incentive Fund STEM Grant in Houston ISD. HISD: Research and Accountability. ERIC Number ED603681: Retrieved 5 June 2026 from eric.ed.gov.\nPrice, L., Provencher, S., & Stevens, C. (2018c). A Descriptive Overview: Teacher Incentive Fund STEM Grant in Houston ISD. HISD: Research and Accountability. ERIC Number ED603678: Retrieved 5 June 2026 from eric.ed.gov.\nPrice, L., & Stevens, C. (2017). Teacher Incentive Fund, Cohort 3—Looking Back, Around, And Ahead: HISD’s Viewfinder For Teacher And Leader Effectiveness. HISD: Research and Accountability.\nPrice, L., Jordan, S., & Stevens, C. (2016, January). Preferences and Perspectives on Teacher Compensation, 2014-2015. HISD: Internal Publication.\nPrice, L. (2014). Parents and Teachers in Title I Schools: A Critical Race Theory Analysis of Parent Engagement [Unpublished master’s thesis]. Peabody College of Education and Human Development, Vanderbilt University."
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#follow-along-at-url",
+    "href": "blog/census-workshop/index.html#follow-along-at-url",
+    "title": "Working with US Census Data",
+    "section": "Follow along at URL",
+    "text": "Follow along at URL"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#download-files-at-url-in-chat",
+    "href": "blog/census-workshop/index.html#download-files-at-url-in-chat",
+    "title": "Working with US Census Data",
+    "section": "Download files at URL in chat",
+    "text": "Download files at URL in chat\nhttps://drive.google.com/drive/folders/1XAhhvJAgn961SCvWq33m_gE9SSNdR9k7?usp=sharing"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#slide-after-toc",
+    "href": "blog/census-workshop/index.html#slide-after-toc",
+    "title": "Working with US Census Data",
+    "section": "Slide after TOC",
+    "text": "Slide after TOC\nSetup and Materials"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#census-geographies",
+    "href": "blog/census-workshop/index.html#census-geographies",
+    "title": "Working with US Census Data",
+    "section": "Census Geographies",
+    "text": "Census Geographies\n&lt; image &gt;\nTask: What are the geographies for your home or work address?"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#why-census-geographies-vs-others",
+    "href": "blog/census-workshop/index.html#why-census-geographies-vs-others",
+    "title": "Working with US Census Data",
+    "section": "Why Census Geographies vs Others",
+    "text": "Why Census Geographies vs Others"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#access-via-data.census.gov-or-ipums",
+    "href": "blog/census-workshop/index.html#access-via-data.census.gov-or-ipums",
+    "title": "Working with US Census Data",
+    "section": "Access via Data.Census.Gov or IPUMS",
+    "text": "Access via Data.Census.Gov or IPUMS"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#access-via-api",
+    "href": "blog/census-workshop/index.html#access-via-api",
+    "title": "Working with US Census Data",
+    "section": "Access via API",
+    "text": "Access via API\nPros & Cons\nMaterials: - Slides and script(s) at pricele2.github.io/census-workshop - CSVs at Google Drive URL"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#open-rstudio-or-posit",
+    "href": "blog/census-workshop/index.html#open-rstudio-or-posit",
+    "title": "Working with US Census Data",
+    "section": "Open RStudio or Posit",
+    "text": "Open RStudio or Posit\n\n\n[1] \"a9ed6de474ab2440222ac46d41626f9cc82b2f76\"\n\n\n[1] \"a9ed6de474ab2440222ac46d41626f9cc82b2f76\""
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#censusapilistcensusapis",
+    "href": "blog/census-workshop/index.html#censusapilistcensusapis",
+    "title": "Working with US Census Data",
+    "section": "censusapi::listCensusApis()",
+    "text": "censusapi::listCensusApis()\ngetOption(“max.print”)\noptions(max.print = 50000)\nlocal_api_list = censusapi::listCensusApis() View(local_api_list)"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#more-than-once-a-decade",
+    "href": "blog/census-workshop/index.html#more-than-once-a-decade",
+    "title": "Working with US Census Data",
+    "section": "More than Once A Decade",
+    "text": "More than Once A Decade\n\nIn 1790, first national count — just six questions!\nIn 1902, Congress established the Census Bureau as a permanent agency\nIn 2026, in the Department of Commerce\nToday, the Census Bureau conducts more than 130 different surveys.\n- Decennial Census of Population and Housing. Every ten years, required by constitution.\n- American Community Survey. Annual survey on the social and economic needs of communities.\n- Economic Census. Five-year measure of American business and the economy at the national, state, and local levels.\n- Current Population Survey. Monthly survey of households on how Americans work — the types of jobs held, the hours worked, and salary information.\n\n\nIn 1902, Congress established the Census Bureau as a permanent agency that would collect vital information and develop statistics representing the American people, including where and how they live.\nDistribute more than $675 billion in federal funds to local, state, and tribal governments each year.\nPlus, States and communities use census data to allocate funding for neighborhood improvements, public health, education, transportation, and more.\nSources: https://www.census.gov/programs-surveys/sis/about/students101.html"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#us-census-more-than-once-a-decade",
+    "href": "blog/census-workshop/index.html#us-census-more-than-once-a-decade",
+    "title": "Working with US Census Data",
+    "section": "US Census: More than Once A Decade",
+    "text": "US Census: More than Once A Decade\n\nIn 1790, first national count — just six questions!\nIn 1902, Congress established the Census Bureau as a permanent agency\nIn 2026, in the Department of Commerce\nToday, the Census Bureau conducts more than 130 different surveys.\n\nDecennial Census of Population and Housing. Every ten years, required by constitution.\nAmerican Community Survey. Annual survey on the social and economic needs of communities.\nEconomic Census. Five-year measure of American business and the economy at the national, state, and local levels.\nCurrent Population Survey. Monthly survey of households on how Americans work — the types of jobs held, the hours worked, and salary information.\n\n\n\nA permanent agency that would collect vital information and develop statistics representing the American people, including where and how they live.\nCensus data is used to distribute more than $675 billion in federal funds to local, state, and tribal governments each year.\nPlus, States and communities use census data to allocate funding for neighborhood improvements, public health, education, transportation, and more.\nSources: https://www.census.gov/programs-surveys/sis/about/students101.html"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#us-census-more-than-decennial",
+    "href": "blog/census-workshop/index.html#us-census-more-than-decennial",
+    "title": "Working with US Census Data",
+    "section": "US Census: More than Decennial",
+    "text": "US Census: More than Decennial\n\nIn 1790, first national count — just six questions!\nIn 1902, Congress established the Census Bureau as a permanent agency\nIn 2026, housed within the Department of Commerce\nToday, the Census Bureau conducts more than 130 different surveys.\n\nDecennial Census of Population and Housing (10-Year). As required by US constitution.\nAmerican Community Survey (Annual). The social and economic needs of communities.\nEconomic Census (5-Year). Businesses & economy at national, state, and local levels.\nCensus of Governments (3-Year). State/local government employment and finances.\nCurrent Population Survey (Monthly). How we work — types of jobs held, wages, hours worked.\n\nEach survey product has its own life cycle and its unique characteristics.\n\n\nA permanent agency that would collect vital information and develop statistics representing the American people, including where and how they live.\nCensus data is used to distribute more than $675 billion in federal funds to local, state, and tribal governments each year.\nPlus, States and communities use census data to allocate funding for neighborhood improvements, public health, education, transportation, and more.\nLOTS of data! Can be pretty overwhelming\nSources: https://www.census.gov/programs-surveys/sis/about/students101.html"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#geographies-big-to-small",
+    "href": "blog/census-workshop/index.html#geographies-big-to-small",
+    "title": "Working with US Census Data",
+    "section": "Geographies: Big to Small",
+    "text": "Geographies: Big to Small\n&lt; image &gt;\n\n\n\nStandard hierarchy of US Census geographic entities\n\n\nTract: Census tracts ideally contain about 4,000 people and 1,600 housing units.\nBlock Group: A statistical subdivision of a census tract, generally defined to contain between 600 and 3,000 people and 240 and 1,200 housing units. The smallest geographic unit for which the Census Bureau tabulates sample data. A sub-division of a census tract.\nBlock: A block is the smallest geographic unit for which the Census Bureau tabulates decennial census data. Many blocks correspond to individual city blocks bounded by streets, but blocks – especially in rural areas – may include many square miles and may have some boundaries that are not streets.\nTask: What are the geographies for your home or work address?"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#census-geographies-vs-others",
+    "href": "blog/census-workshop/index.html#census-geographies-vs-others",
+    "title": "Working with US Census Data",
+    "section": "Census Geographies vs Others",
+    "text": "Census Geographies vs Others\nSchool Districts\nZIP Codes\nMunicipal Districts (Watershed)"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#hello-baker-ripley-community-of-practice",
+    "href": "blog/census-workshop/index.html#hello-baker-ripley-community-of-practice",
+    "title": "Working with US Census Data",
+    "section": "Hello Baker Ripley Community of Practice!",
+    "text": "Hello Baker Ripley Community of Practice!\nTHANK YOU for having me!\nData and policy leader with over a decade of experience using analytics, data science, and strategic planning to support decision-making in large K-12 school systems\nMy work sits at the intersection of education policy, finance, data science, and program strategy.\n\nMe at Posit::Conf(2022) in DC\nOn a personal angle,\nI’ve lived in six states, including Colorado for six years after undergrad\nMy extended family hails from both New Jersey and New Mexico\nI earned my degrees from Notre Dame and Vanderbilt"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#the-census-bureau",
+    "href": "blog/census-workshop/index.html#the-census-bureau",
+    "title": "Working with US Census Data",
+    "section": "The Census Bureau",
+    "text": "The Census Bureau\n\nConstitution requires a headcount of all persons every 10 years\nFirst purpose: Apportionment of seats in the House of Representatives\n\n1790: First national count — just six questions\n1902: Congress establishes a permanent agency\n2026: Bureau lives within the Department of Commerce\n\nSometimes mundane, sometimes controversial!\n\nSlavery, citizenship, genealogy\nIndigenous Peoples and LGBTQ+ civil rights\nEquitable representation and gerrymandering"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#many-purposes",
+    "href": "blog/census-workshop/index.html#many-purposes",
+    "title": "Working with US Census Data",
+    "section": "Many Purposes",
+    "text": "Many Purposes\n\nToday, the Census Bureau conducts more than 130 different surveys.\nEach data product has its own life cycle and its own peculiar characteristics.\n\nDecennial Census of Population and Housing (10-Year). As required by US constitution, used for redistricting and apportionment\nAmerican Community Survey (Annual). The social and economic needs of communities, across many demographic characteristics.\nSmall Area Income and Poverty Estimates. Annual estimates of income and poverty statistics for all school districts, counties, and states.\nCurrent Population Survey (Monthly). How we work — types of jobs held, wages, hours worked.\n\nCensus data is used to distribute more than $675 billion in federal funds to local, state, and tribal governments each year.\n\n\n\nEconomic Census (5-Year). Businesses & economy at national, state, and local levels.\nCensus of Governments (3-Year). State/local government employment and finances.\nSmall Area Health Insurance Estimates.\n\nPlus, States and communities use census data to allocate funding for neighborhood improvements, public health, education, transportation, and more.\nSources: https://www.census.gov/programs-surveys/sis/about/students101.html\nTRANSITION: LOTS of data! Can be pretty overwhelming"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#census-geographies-built-upwards-from-blocks",
+    "href": "blog/census-workshop/index.html#census-geographies-built-upwards-from-blocks",
+    "title": "Working with US Census Data",
+    "section": "Census Geographies: Built Upwards from Blocks",
+    "text": "Census Geographies: Built Upwards from Blocks\n\n\n\nCensus geographies are built from Blocks, aggregated to Counties to States"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#blocks-block-groups-tracts-then-counties",
+    "href": "blog/census-workshop/index.html#blocks-block-groups-tracts-then-counties",
+    "title": "Working with US Census Data",
+    "section": "Blocks, Block Groups, Tracts, then Counties",
+    "text": "Blocks, Block Groups, Tracts, then Counties\nBlock: A block is the smallest geographic unit for which the Census Bureau tabulates decennial census data. In cities, many blocks correspond to individual city blocks bounded by streets.\nBlock Group: A statistical subdivision of a census tract, generally defined to contain between 600 and 3,000 people and 240 and 1,200 housing units. The smallest geographic unit for which the Census Bureau tabulates sample data. A sub-division of a census tract.\nTract: Census tracts ideally contain about 4,000 people and 1,600 housing units.\nSource: Glossary at Census.gov"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#harris-county",
+    "href": "blog/census-workshop/index.html#harris-county",
+    "title": "Working with US Census Data",
+    "section": "Harris County",
+    "text": "Harris County\nTask: What are the geographies for your home or work address?"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#hello-br-community-of-practice",
+    "href": "blog/census-workshop/index.html#hello-br-community-of-practice",
+    "title": "Working with US Census Data",
+    "section": "Hello BR Community of Practice!",
+    "text": "Hello BR Community of Practice!\n\nTHANK YOU for having me!\nData and policy leader with over a decade of experience using analytics, data science, and strategic planning to support decision-making in large K-12 school systems\nMy work sits at the intersection of education policy, finance, data science, and program strategy.\nDiversity Scholarship to Posit::Conf(2022) in DC\n\n\nLauren at Posit::Conf 2022\nOn a personal angle,\nI earned my degrees from Notre Dame and Vanderbilt\nI’ve lived in six states, including Texas for twelve years after grad school\nMy extended family hails from both New Jersey and New Mexico"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#hello-baker-ripley",
+    "href": "blog/census-workshop/index.html#hello-baker-ripley",
+    "title": "Working with US Census Data",
+    "section": "Hello Baker Ripley!",
+    "text": "Hello Baker Ripley!\n\nTHANK YOU for having me!\nData and policy leader with over a decade of experience using analytics, data science, and strategic planning to support decision-making in large K-12 school systems\nMy work sits at the intersection of education policy, finance, data science, and program strategy.\nMartha O’Bryan Center in Nashville, Tennessee\nDiversity Scholarship to Posit::Conf(2022) in DC\n\n\nLauren at Posit::Conf 2022\nOn a personal angle,\nI earned my degrees from Notre Dame and Vanderbilt\nI’ve lived in six states, including Texas for twelve years after grad school\nMy extended family hails from both New Jersey and New Mexico"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#geographies-built-from-blocks",
+    "href": "blog/census-workshop/index.html#geographies-built-from-blocks",
+    "title": "Working with US Census Data",
+    "section": "Geographies Built from Blocks",
+    "text": "Geographies Built from Blocks\n\n\n\n\n\n\n\nCensus geographies are built from Blocks, aggregated to Counties to States"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#census-geographies-built-from-blocks",
+    "href": "blog/census-workshop/index.html#census-geographies-built-from-blocks",
+    "title": "Working with US Census Data",
+    "section": "Census Geographies Built from Blocks",
+    "text": "Census Geographies Built from Blocks\n\n\n\n\n\n\n\nCensus geographies are built from Blocks, aggregated to Counties to States\n\n\nBlocks, Block Groups, Tracts, then Counties\nBlock: A block is the smallest geographic unit for which the Census Bureau tabulates decennial census data. In cities, many blocks correspond to individual city blocks bounded by streets.\nBlock Group: A statistical subdivision of a census tract, generally defined to contain between 600 and 3,000 people and 240 and 1,200 housing units. The smallest geographic unit for which the Census Bureau tabulates sample data. A sub-division of a census tract.\nTract: Census tracts ideally contain about 4,000 people and 1,600 housing units.\nSource: Glossary at Census.gov"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#geographies-start-with-blocks",
+    "href": "blog/census-workshop/index.html#geographies-start-with-blocks",
+    "title": "Working with US Census Data",
+    "section": "Geographies Start with Blocks",
+    "text": "Geographies Start with Blocks\n\n\n\n\n\n\n\nCensus geographies are built from Blocks, aggregated to Counties to States"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#block-groups-and-tracts",
+    "href": "blog/census-workshop/index.html#block-groups-and-tracts",
+    "title": "Working with US Census Data",
+    "section": "Block Groups and Tracts",
+    "text": "Block Groups and Tracts\n\nGeographies for BR Central\nBlock: A block is the smallest geographic unit for which the Census Bureau tabulates decennial census data. In cities, many blocks correspond to individual city blocks bounded by streets. Block 3032\nBlock Group: A statistical subdivision of a census tract, generally defined to contain between 600 and 3,000 people and 240 and 1,200 housing units. The smallest geographic unit for which the Census Bureau tabulates sample data. A sub-division of a census tract. Block Groups 1, 2, and 3\nTract: Census tracts ideally contain about 4,000 people and 1,600 housing units. Census Tract 310400\nFIPS: Five-digit code for each unique state (48) and county (201).\nGEOID: Unique ID or “name” for each census block. 48 201 310400 3032\nSource: Glossary at Census.gov"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#diverse-data-many-purposes",
+    "href": "blog/census-workshop/index.html#diverse-data-many-purposes",
+    "title": "Working with US Census Data",
+    "section": "Diverse Data, Many Purposes",
+    "text": "Diverse Data, Many Purposes\n\nToday, the Census Bureau conducts over 130 different surveys.\nEach data product has its own life cycle and its own peculiar characteristics.\n\nDecennial Census of Population and Housing (10-Year). As required by US constitution, used for redistricting and apportionment\nAmerican Community Survey (Annual). The social and economic needs of communities, across many demographic characteristics.\nSmall Area Income and Poverty Estimates (Annual). Income and poverty statistics for all school districts, counties, and states.\nCurrent Population Survey (Monthly). How we work — types of jobs held, wages, hours worked.\n\nCensus data is used to distribute more than $675 billion in federal funds to local, state, and tribal governments each year.\n\n\n\nEconomic Census (5-Year). Businesses & economy at national, state, and local levels.\nCensus of Governments (3-Year). State/local government employment and finances.\nSmall Area Health Insurance Estimates.\n\nPlus, States and communities use census data to allocate funding for neighborhood improvements, public health, education, transportation, and more.\nSources: https://www.census.gov/programs-surveys/sis/about/students101.html\nTRANSITION: LOTS of data! Can be pretty overwhelming"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#access-outside-api",
+    "href": "blog/census-workshop/index.html#access-outside-api",
+    "title": "Working with US Census Data",
+    "section": "Access Outside API",
+    "text": "Access Outside API\n\nOnline Data Products:\n\nFind Geographies for One Address\nPre-Built Profiles\nFact Sheets\nQuick Facts\nSurvey Explorer\nData.Census.Gov\n\nFree Learning Resources:\n\nCensus Academy Courses/Webinars\nNational Historic Geographic Info System\n\nAdvantages of API — Minimize chaos & navigation clutter"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#lets-start",
+    "href": "blog/census-workshop/index.html#lets-start",
+    "title": "Working with US Census Data",
+    "section": "Let’s Start!",
+    "text": "Let’s Start!\nMaterials:\n\nSlides and scripts published at pricele2.github.io/blog\nAPI Key registered to Baker Ripley, via Jorge Martinez\nCSVs at my Google Drive URL"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#open-your-program",
+    "href": "blog/census-workshop/index.html#open-your-program",
+    "title": "Working with US Census Data",
+    "section": "Open Your Program",
+    "text": "Open Your Program\n\n# Do this first\n# install.packages(c(\"tidycensus\", \"mapview\", \"tidygeocoder\", \"ipumsr\", \"censusapi\", \"tidyverse\"))\n\n# Run this instead every time afterwards\nmy_packages &lt;- c(\"tidycensus\", \"mapview\", \"tidygeocoder\", \"ipumsr\", \"censusapi\", \"tidyverse\")\nlapply(my_packages, library, character.only = TRUE)\n\nSet Up Census API Key\n\n# Check to see if you already have a CENSUS_KEY or CENSUS_API_KEY saved\n# If so, no further action is needed\nget_api_key()\n\n[1] \"a9ed6de474ab2440222ac46d41626f9cc82b2f76\"\n\n\n\n# If not, add your key to your Renviron file\ncensus_api_key(\"PASTEYOURKEYHERE\", overwrite = FALSE, install = TRUE)\n\n# Reload .Renviron the first time\nreadRenviron(\"~/.Renviron\")\n\n# Confirm that the expected key is output in your R console\nget_api_key()"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#lets-learn-harris-county",
+    "href": "blog/census-workshop/index.html#lets-learn-harris-county",
+    "title": "Working with US Census Data",
+    "section": "Let’s learn! Harris County",
+    "text": "Let’s learn! Harris County"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#block-level-decennial-only",
+    "href": "blog/census-workshop/index.html#block-level-decennial-only",
+    "title": "Working with US Census Data",
+    "section": "Block-Level: Decennial Only",
+    "text": "Block-Level: Decennial Only\nhttps://walker-data.com/tidycensus/articles/basic-usage.html#geography-in-tidycensus"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#counties-served-by-workforce-solutions",
+    "href": "blog/census-workshop/index.html#counties-served-by-workforce-solutions",
+    "title": "Working with US Census Data",
+    "section": "Counties served by Workforce Solutions",
+    "text": "Counties served by Workforce Solutions\nListed at https://www.wrksolutions.com/regional-economic-data/quarterly-employment-reports-by-county"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#behavior-risk-factor-surveillance-system-brfss",
+    "href": "blog/census-workshop/index.html#behavior-risk-factor-surveillance-system-brfss",
+    "title": "Working with US Census Data",
+    "section": "Behavior Risk Factor Surveillance System (BRFSS)",
+    "text": "Behavior Risk Factor Surveillance System (BRFSS)\nGlossary at https://data.cdc.gov/Survey-Data/Behavior-Risk-Factor-Surveillance-System-BRFSS-Glo/5amh-5sx3/about_data"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#set-up-api-key",
+    "href": "blog/census-workshop/index.html#set-up-api-key",
+    "title": "Working with US Census Data",
+    "section": "Set Up API Key",
+    "text": "Set Up API Key\n\n\n[1] \"a9ed6de474ab2440222ac46d41626f9cc82b2f76\"\n\n\n[1] \"a9ed6de474ab2440222ac46d41626f9cc82b2f76\""
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#harris-county-decennial",
+    "href": "blog/census-workshop/index.html#harris-county-decennial",
+    "title": "Working with US Census Data",
+    "section": "Harris County / Decennial",
+    "text": "Harris County / Decennial\n\n# From the tidycensus package:\n# Demographic and Housing Characteristics File (\"Decennial Census\")\nvars_dhc = load_variables(2020, dataset = \"dhc\")\nView(vars_dhc)\n\n\n\nharris_blocks = get_decennial(\n  geography = \"block group\", \n  variables = \"PCT13_001N\", # SEX BY AGE FOR THE POPULATION IN HOUSEHOLDS\n  state = \"TX\",\n  county = \"Harris County\",\n  sumfile = \"dhc\",\n  year = 2020,\n  geometry = FALSE, \n  show_call = TRUE\n)\n\nView(harris_blocks)"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#harris-county-decennial-output",
+    "href": "blog/census-workshop/index.html#harris-county-decennial-output",
+    "title": "Working with US Census Data",
+    "section": "Harris County / Decennial",
+    "text": "Harris County / Decennial"
+  },
+  {
+    "objectID": "blog/census-workshop/index.html#visualize-the-geoid",
+    "href": "blog/census-workshop/index.html#visualize-the-geoid",
+    "title": "Working with US Census Data",
+    "section": "Visualize the GEOID",
+    "text": "Visualize the GEOID\n\nGEOID 48201"
   }
 ]

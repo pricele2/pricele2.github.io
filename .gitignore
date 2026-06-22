@@ -8,3 +8,7 @@
 
 /.quarto/
 **/*.quarto_ipynb
+
+~/R/*/data/*
+
+*.csv
