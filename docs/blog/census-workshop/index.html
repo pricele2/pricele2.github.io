@@ -11,7 +11,7 @@
 
   <meta name="author" content="Lauren Price">
   <meta name="dcterms.date" content="2026-06-24">
-  <title>Lauren Price – Working with US Census Data</title>
+  <title>Lauren Price – Working with US Census Data [DRAFT]</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -194,7 +194,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Working with US Census Data</h1>
+  <h1 class="title">Working with US Census Data [DRAFT]</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -303,19 +303,18 @@ Lauren Price
 <section id="block-groups-and-tracts" class="slide level2">
 <h2>Block Groups and Tracts</h2>
 <div class="r-fit-text">
-<p><a href="https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=4450%20Harrisburg%20Blvd%2C%20Houston%2C%20Texas&amp;benchmark=4&amp;vintage=4">Geographies for BR Central</a></p>
-<p><strong>Block:</strong> A block is the smallest geographic unit for which the Census Bureau tabulates decennial census data. In cities, many blocks correspond to individual city blocks bounded by streets. <strong>Block 3032</strong></p>
-<p><strong>Block Group:</strong> A statistical subdivision of a census tract, generally defined to contain between 600 and 3,000 people and 240 and 1,200 housing units. The smallest geographic unit for which the Census Bureau tabulates sample data. A sub-division of a census tract. <strong>Block Groups 1, 2, and 3</strong></p>
-<p><strong>Tract:</strong> Census tracts ideally contain about 4,000 people and 1,600 housing units. <strong>Census Tract 310400</strong></p>
+<p><a href="https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=4450%20Harrisburg%20Blvd%2C%20Houston%2C%20Texas&amp;benchmark=4&amp;vintage=4">Geographies for BR Central</a> <strong>GEOID:</strong> Unique ID or “name” for each census block. <strong>48 201 310400 3032</strong></p>
 <p><strong>FIPS:</strong> Five-digit code for each unique state (<strong>48</strong>) and county (<strong>201</strong>).</p>
-<p><strong>GEOID:</strong> Unique ID or “name” for each census block. <strong>48 201 310400 3032</strong></p>
+<p><strong>Tract:</strong> Ideally contain about 4,000 people and 1,600 housing units. <strong>310400</strong></p>
+<p><strong>Block Group:</strong> A subdivision of a census tract; generally contain between 600 and 3,000 people and 240 and 1,200 housing units. The smallest unit for which the Bureau tabulates data for <em>any other survey</em>. <strong>Block Groups 1, 2, and 3</strong></p>
+<p><strong>Block:</strong> The smallest geographic unit for which the Bureau tabulates <em>decennial</em> census data. In cities, many blocks correspond to individual city blocks bounded by streets. <strong>Block 3032</strong></p>
 <p>Source: <a href="https://www.census.gov/glossary/">Glossary at Census.gov</a></p>
 </div>
 </section>
 <section id="visualize-the-geoid" class="slide level2">
 <h2>Visualize the GEOID</h2>
 
-<img data-src="../..\images/census-work/block-group-tract-BR.jpg" alt="Greyscale line map from data.census.gov showing a highlighted section of city blocks" width="717" class="r-stretch quarto-figure-left"><p class="caption">GEOID 48201</p></section>
+<img data-src="../..\images/census-work/block-group-tract-BR.jpg" alt="Greyscale line map from data.census.gov showing a highlighted section of city blocks" width="717" class="r-stretch quarto-figure-left"><p class="caption">Map of GEOID 482013104003032</p></section>
 <section id="access-outside-api" class="slide level2">
 <h2>Access Outside API</h2>
 <div class="r-fit-text">
@@ -387,7 +386,7 @@ Lauren Price
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>harris_blocks <span class="ot">=</span> <span class="fu">get_decennial</span>(</span>
 <span id="cb6-2"><a></a>  <span class="at">geography =</span> <span class="st">"block group"</span>, </span>
-<span id="cb6-3"><a></a>  <span class="at">variables =</span> <span class="st">"PCT13_001N"</span>, <span class="co"># SEX BY AGE FOR THE POPULATION IN HOUSEHOLDS</span></span>
+<span id="cb6-3"><a></a>  <span class="at">variables =</span> <span class="st">"P1_001N"</span>, <span class="co"># TOTAL POPULATION</span></span>
 <span id="cb6-4"><a></a>  <span class="at">state =</span> <span class="st">"TX"</span>,</span>
 <span id="cb6-5"><a></a>  <span class="at">county =</span> <span class="st">"Harris County"</span>,</span>
 <span id="cb6-6"><a></a>  <span class="at">sumfile =</span> <span class="st">"dhc"</span>,</span>
@@ -399,38 +398,28 @@ Lauren Price
 <span id="cb6-12"><a></a><span class="fu">View</span>(harris_blocks)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
+<!-- ## Block-Level: Decennial Only -->
+<!-- https://walker-data.com/tidycensus/articles/basic-usage.html#geography-in-tidycensus -->
+<!-- ## Census Geographies vs Others -->
+<!-- School Districts -->
+<!-- ZIP Codes -->
+<!-- Municipal Districts (Watershed) -->
+<!-- ## censusapi::listCensusApis() -->
+<!-- getOption("max.print") -->
+<!-- options(max.print = 50000) -->
+<!-- local_api_list = censusapi::listCensusApis() View(local_api_list) -->
+<!-- ## Counties served by Workforce Solutions -->
+<!-- Listed at https://www.wrksolutions.com/regional-economic-data/quarterly-employment-reports-by-county -->
+<!-- ## Behavior Risk Factor Surveillance System (BRFSS) -->
+<!-- Glossary at https://data.cdc.gov/Survey-Data/Behavior-Risk-Factor-Surveillance-System-BRFSS-Glo/5amh-5sx3/about_data -->
+
+
 </section>
-<section id="harris-county-decennial-output" class="slide level2 output-location-slide"><h2>Harris County / Decennial</h2><div class="cell output-location-slide">
+    <section id="harris-county-decennial-output" class="slide level2 output-location-slide"><h2>Harris County / Decennial</h2><div class="cell output-location-slide">
 
 </div></section><section id="harris-county-decennial-output" class="slide level2 output-location-slide"><h2>Harris County / Decennial</h2><div class="cell output-location-slide">
 
-</div></section><section id="block-level-decennial-only" class="slide level2">
-<h2>Block-Level: Decennial Only</h2>
-<p>https://walker-data.com/tidycensus/articles/basic-usage.html#geography-in-tidycensus</p>
-</section>
-<section id="census-geographies-vs-others" class="slide level2">
-<h2>Census Geographies vs Others</h2>
-<p>School Districts</p>
-<p>ZIP Codes</p>
-<p>Municipal Districts (Watershed)</p>
-</section>
-<section id="censusapilistcensusapis" class="slide level2">
-<h2>censusapi::listCensusApis()</h2>
-<p>getOption(“max.print”)</p>
-<p>options(max.print = 50000)</p>
-<p>local_api_list = censusapi::listCensusApis() View(local_api_list)</p>
-</section>
-<section id="counties-served-by-workforce-solutions" class="slide level2">
-<h2>Counties served by Workforce Solutions</h2>
-<p>Listed at https://www.wrksolutions.com/regional-economic-data/quarterly-employment-reports-by-county</p>
-</section>
-<section id="behavior-risk-factor-surveillance-system-brfss" class="slide level2">
-<h2>Behavior Risk Factor Surveillance System (BRFSS)</h2>
-<p>Glossary at https://data.cdc.gov/Survey-Data/Behavior-Risk-Factor-Surveillance-System-BRFSS-Glo/5amh-5sx3/about_data</p>
-
-
-</section>
-    </div>
+</div></section></div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
 

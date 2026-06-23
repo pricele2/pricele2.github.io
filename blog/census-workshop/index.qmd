@@ -1,5 +1,5 @@
 ---
-title: Working with US Census Data
+title: Working with US Census Data [DRAFT]
 date: 2026-06-24
 author: Lauren Price
 
@@ -105,7 +105,7 @@ TRANSITION: LOTS of data! Can be pretty overwhelming
 
 **FIPS:** Five-digit code for each unique state (**48**) and county (**201**).
 
-**Tract:** Ideally contain about 4,000 people and 1,600 housing units. **Tract 310400**
+**Tract:** Ideally contain about 4,000 people and 1,600 housing units. **310400**
 
 **Block Group:** A subdivision of a census tract; generally contain between 600 and 3,000 people and 240 and 1,200 housing units. The smallest unit for which the Bureau tabulates data for *any other survey*. **Block Groups 1, 2, and 3**
 
@@ -225,7 +225,7 @@ View(vars_dhc)
 
 harris_blocks = get_decennial(
   geography = "block group", 
-  variables = "PCT13_001N", # SEX BY AGE FOR THE POPULATION IN HOUSEHOLDS
+  variables = "P1_001N", # TOTAL POPULATION
   state = "TX",
   county = "Harris County",
   sumfile = "dhc",
@@ -237,30 +237,30 @@ harris_blocks = get_decennial(
 View(harris_blocks)
 ```
 
-## Block-Level: Decennial Only
+<!-- ## Block-Level: Decennial Only -->
 
-https://walker-data.com/tidycensus/articles/basic-usage.html#geography-in-tidycensus
+<!-- https://walker-data.com/tidycensus/articles/basic-usage.html#geography-in-tidycensus -->
 
-## Census Geographies vs Others
+<!-- ## Census Geographies vs Others -->
 
-School Districts
+<!-- School Districts -->
 
-ZIP Codes
+<!-- ZIP Codes -->
 
-Municipal Districts (Watershed)
+<!-- Municipal Districts (Watershed) -->
 
-## censusapi::listCensusApis()
+<!-- ## censusapi::listCensusApis() -->
 
-getOption("max.print")
+<!-- getOption("max.print") -->
 
-options(max.print = 50000)
+<!-- options(max.print = 50000) -->
 
-local_api_list = censusapi::listCensusApis() View(local_api_list)
+<!-- local_api_list = censusapi::listCensusApis() View(local_api_list) -->
 
-## Counties served by Workforce Solutions
+<!-- ## Counties served by Workforce Solutions -->
 
-Listed at https://www.wrksolutions.com/regional-economic-data/quarterly-employment-reports-by-county
+<!-- Listed at https://www.wrksolutions.com/regional-economic-data/quarterly-employment-reports-by-county -->
 
-## Behavior Risk Factor Surveillance System (BRFSS)
+<!-- ## Behavior Risk Factor Surveillance System (BRFSS) -->
 
-Glossary at https://data.cdc.gov/Survey-Data/Behavior-Risk-Factor-Surveillance-System-BRFSS-Glo/5amh-5sx3/about_data
+<!-- Glossary at https://data.cdc.gov/Survey-Data/Behavior-Risk-Factor-Surveillance-System-BRFSS-Glo/5amh-5sx3/about_data -->
