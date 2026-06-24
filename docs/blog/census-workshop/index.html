@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-99eeafcedac04850354b682963cedae3.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-04977dbbebb790bb5731a62be120a700.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -195,6 +195,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Working with US Census Data [DRAFT]</h1>
+  <p class="subtitle">A Friendly Introduction to API Workflows</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -212,15 +213,14 @@ Lauren Price
 <p><strong>THANK YOU</strong> for having me!</p>
 <p>Data and policy leader with over a decade of experience using analytics, data science, and strategic planning to support decision-making in large K-12 school systems</p>
 <p>My work sits at the intersection of education policy, finance, data science, and program strategy.</p>
-<p>Martha O’Bryan Center in Nashville, Tennessee</p>
-<p>Diversity Scholarship to Posit::Conf(2022) in DC</p>
+<p>Similar to BR: Martha O’Bryan Center in Nashville, Tennessee</p>
 </div>
 
-<img data-src="../..\images/positconf2022-selfie.JPG" class="r-stretch quarto-figure-center"><p class="caption">Lauren at Posit::Conf 2022</p><aside class="notes">
-<p>On a personal angle,</p>
-<p>I earned my degrees from Notre Dame and Vanderbilt</p>
-<p>I’ve lived in six states, including Texas for twelve years after grad school</p>
+<img data-src="../..\images/positconf2022-selfie.JPG" width="375" class="r-stretch quarto-figure-left"><p class="caption">Lauren at Posit::Conf 2022</p><aside class="notes">
+<p>On a personal angle, I earned my degrees from Notre Dame and Vanderbilt</p>
 <p>My extended family hails from both New Jersey and New Mexico</p>
+<p>I’ve lived in six states, including Texas for twelve years after grad school</p>
+<p>Diversity Scholarship to Posit::Conf(2022) in DC</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -233,48 +233,71 @@ Lauren Price
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-census-bureau" class="slide level2">
-<h2>The Census Bureau</h2>
+<section id="before-we-start" class="slide level2">
+<h2>Before We Start</h2>
+<p><strong>Definition:</strong></p>
+<p>An application programming interface (API) is a connection between computers or between computer programs. A type of software interface.</p>
+<p><strong>Materials:</strong></p>
+<p>Slides and code at <a href="https://pricele2.github.io/blog.html">pricele2.github.io/blog</a></p>
+<p>Plain text API key registered to Baker Ripley</p>
+<p>Practice CSVs at <a href="https://drive.google.com/drive/folders/1XAhhvJAgn961SCvWq33m_gE9SSNdR9k7?usp=sharing">my Google Drive URL</a></p>
+<p><a href="">Optional Resource:</a> Kyle Walker’s <em>Analyzing US Census Data: Methods, Maps, and Models in R</em> (CC-BY-NC 2023)</p>
+<p>Searchable <a href="https://www.census.gov/glossary/">Glossary at Census.gov</a></p>
+</section>
+<section id="federal-responsibility" class="slide level2">
+<h2>Federal Responsibility</h2>
 <div class="r-fit-text">
 <p>Constitution requires a headcount of <em>all persons</em> every 10 years</p>
-<p>First purpose: Apportionment of seats in the House of Representatives</p>
 <ul>
-<li><p>1790: First national count — just six questions</p></li>
-<li><p>1902: Congress establishes a permanent agency</p></li>
-<li><p>2026: Bureau lives within the Department of Commerce</p></li>
+<li><p>Article 1 Section 2: US House seats</p></li>
+<li><p>1790: First national count</p></li>
+<li><p>1902: Permanent agency</p></li>
 </ul>
-<p>Sometimes mundane, sometimes controversial!</p>
+<p>Present-Day:</p>
 <ul>
-<li><p>Slavery, citizenship, genealogy</p></li>
-<li><p>Indigenous Peoples and LGBTQ+ civil rights</p></li>
-<li><p>Equitable representation and gerrymandering<br>
-</p></li>
+<li><p>Within the Department of Commerce</p></li>
+<li><p>Over 4,000 employees</p></li>
 </ul>
 </div>
 </section>
+<section id="contains-multitudes" class="slide level2">
+<h2>Contains Multitudes</h2>
+<p>Sometimes mundane, sometimes controversial</p>
+<ul>
+<li><p>Slavery, citizenship</p></li>
+<li><p>Movement between places</p></li>
+<li><p>Indigenous Peoples and LGBTQ+ civil rights</p></li>
+<li><p>Equitable representation</p></li>
+<li><p>Door-to-door “enumeration” for Decennial</p></li>
+<li><p>Statistical “fuzzing” through noise injection</p></li>
+</ul>
+</section>
 <section id="diverse-data-many-purposes" class="slide level2">
 <h2>Diverse Data, Many Purposes</h2>
-<div class="r-fit-text">
-<p>Today, the Census Bureau conducts over 130 different surveys.</p>
-<p>Each data product has its own life cycle and its own peculiar characteristics.</p>
+<p>Over 130 different surveys (“data products”)</p>
+<p>Each has its own life cycle and its own characteristics</p>
+<p>Drives annual distribution of <strong>more than $675 billion</strong> in federal funds to local, state, and tribal governments</p>
+</section>
+<section id="three-data-products" class="slide level2">
+<h2>Three Data Products</h2>
+<p><strong>Decennial Census of Population and Housing (10-Year).</strong></p>
 <ul>
-<li><p><strong>Decennial Census of Population and Housing (10-Year).</strong> As required by US constitution, used for redistricting and apportionment</p></li>
-<li><p><strong>American Community Survey (Annual).</strong> The social and economic needs of communities, across many demographic characteristics.</p></li>
-<li><p><strong>Small Area Income and Poverty Estimates (Annual).</strong> Income and poverty statistics for all school districts, counties, and states.</p></li>
-<li><p><strong>Current Population Survey (Monthly).</strong> How we work — types of jobs held, wages, hours worked.</p></li>
+<li>As required by US constitution, used for redistricting</li>
 </ul>
-<p>Census data is used to distribute <strong>more than $675 billion</strong> in federal funds to local, state, and tribal governments each year.</p>
-</div>
+<p><strong>American Community Survey (Annual).</strong></p>
+<ul>
+<li>The social and economic needs of communities, across many demographic characteristics</li>
+</ul>
+<p><strong>Small Area Income and Poverty Estimates (Annual).</strong></p>
+<ul>
+<li>Income and poverty statistics for all school districts, counties, and states</li>
+</ul>
+<p>What do we need to know to get started?</p>
 <aside class="notes">
-<ul>
-<li><p><strong>Economic Census (5-Year).</strong> Businesses &amp; economy at national, state, and local levels.</p></li>
-<li><p><strong>Census of Governments (3-Year).</strong> State/local government employment and finances.</p></li>
-<li><p><strong>Small Area Health Insurance Estimates.</strong></p></li>
-</ul>
-<p>Plus, States and communities use census data to allocate funding for neighborhood improvements, public health, education, transportation, and more.</p>
-<p>Sources: https://www.census.gov/programs-surveys/sis/about/students101.html</p>
-<p>TRANSITION: LOTS of data! Can be pretty overwhelming</p>
 <!-- By default a revealjs slide is 1050px wide by 700px tall. -->
+<p>Sources: https://www.census.gov/programs-surveys/sis/about/students101.html</p>
+<p>TRANSITION: LOTS of data! Over 4000 employees</p>
+<p>Can be pretty overwhelming</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -300,104 +323,360 @@ Lauren Price
 </figure>
 </div>
 </section>
-<section id="block-groups-and-tracts" class="slide level2">
-<h2>Block Groups and Tracts</h2>
+<section id="our-census-location-mapped" class="slide level2">
+<h2>Our Census Location, Mapped</h2>
+<p>Let’s look up the <a href="https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=4450%20Harrisburg%20Blvd%2C%20Houston%2C%20Texas&amp;benchmark=4&amp;vintage=4">Census Geographies for Baker Ripley Central</a></p>
+<p><strong>GEOID:</strong> Unique ID for each census block, 15 digits. <strong>48 201 310400 3032</strong></p>
+
+<img data-src="../..\images/census-work/block-group-tract-BR.jpg" alt="Greyscale line map from data.census.gov showing a highlighted section of city blocks" width="685" class="r-stretch quarto-figure-left"><p class="caption">4450 Harrisburg Blvd</p></section>
+<section id="blocks-groups-tracts" class="slide level2">
+<h2>Blocks, Groups, Tracts</h2>
 <div class="r-fit-text">
-<p><a href="https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=4450%20Harrisburg%20Blvd%2C%20Houston%2C%20Texas&amp;benchmark=4&amp;vintage=4">Geographies for BR Central</a> <strong>GEOID:</strong> Unique ID or “name” for each census block. <strong>48 201 310400 3032</strong></p>
-<p><strong>FIPS:</strong> Five-digit code for each unique state (<strong>48</strong>) and county (<strong>201</strong>).</p>
-<p><strong>Tract:</strong> Ideally contain about 4,000 people and 1,600 housing units. <strong>310400</strong></p>
-<p><strong>Block Group:</strong> A subdivision of a census tract; generally contain between 600 and 3,000 people and 240 and 1,200 housing units. The smallest unit for which the Bureau tabulates data for <em>any other survey</em>. <strong>Block Groups 1, 2, and 3</strong></p>
-<p><strong>Block:</strong> The smallest geographic unit for which the Bureau tabulates <em>decennial</em> census data. In cities, many blocks correspond to individual city blocks bounded by streets. <strong>Block 3032</strong></p>
-<p>Source: <a href="https://www.census.gov/glossary/">Glossary at Census.gov</a></p>
+<p><strong>FIPS:</strong> Five-digit code for each state (<strong>48 Texas</strong>) and county (<strong>201 Harris</strong>).</p>
+<p><strong>Tract:</strong> Smaller than a county: think <em>neighborhood</em>. Contains block groups.</p>
+<ul>
+<li><p>Ideally contain about 4,000 people and 1,600 housing units.</p></li>
+<li><p>Harris County has 1,115 Census tracts (2020 DHC) <!-- # Tract 310400 --></p></li>
+</ul>
+<p><strong>Block Group:</strong> A subdivision of a census tract. Contains blocks.</p>
+<ul>
+<li><p>Generally between 600 — 3,000 people and 240 — 1,200 housing units.</p></li>
+<li><p>Smallest unit for which the Bureau tabulates data for <em>any survey other than Decennial</em>.</p></li>
+<li><p>Harris County has 2,830 block groups <!-- - **Block Groups 1, 2, and 3** --></p></li>
+</ul>
+<p><strong>Block:</strong> The smallest unit for which the Bureau tabulates <em>decennial</em> census data.</p>
+<ul>
+<li><p>In cities, many blocks correspond to individual city blocks bounded by streets.</p></li>
+<li><p>Harris County has 51,077 Census blocks <!-- - **Block 3032**  --></p></li>
+</ul>
 </div>
 </section>
-<section id="visualize-the-geoid" class="slide level2">
-<h2>Visualize the GEOID</h2>
-
-<img data-src="../..\images/census-work/block-group-tract-BR.jpg" alt="Greyscale line map from data.census.gov showing a highlighted section of city blocks" width="717" class="r-stretch quarto-figure-left"><p class="caption">Map of GEOID 482013104003032</p></section>
-<section id="access-outside-api" class="slide level2">
-<h2>Access Outside API</h2>
+<section id="online-data-outside-api" class="slide level2">
+<h2>Online Data Outside API</h2>
+<p><a href="https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?form">Find Geographies for One Address</a></p>
+<p><a href="https://data.census.gov/profile">Pre-Built Profiles</a></p>
+<p><a href="https://www.census.gov/library/fact-sheets.html">Fact Sheets</a></p>
+<p><a href="https://www.census.gov/quickfacts/">Quick Facts</a></p>
+<p><a href="https://www.census.gov/data/data-tools/survey-explorer/">Survey Explorer</a></p>
+<p><a href="https://data.census.gov/">Data.Census.Gov</a></p>
+<p>Great for exploring what exists!</p>
+</section>
+<section id="free-learning-resources" class="slide level2">
+<h2>Free Learning Resources:</h2>
 <div class="r-fit-text">
-<p>Online Data Products:</p>
+<p><a href="https://www.census.gov/data/academy.html">Census Academy Courses/Webinars</a></p>
+<p><a href="https://public.govdelivery.com/accounts/USCENSUS/subscriber/new">Email Updates from Census</a></p>
+<p><a href="https://www.nhgis.org/">National Historic Geographic Info System</a></p>
 <ul>
-<li><p><a href="https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?form">Find Geographies for One Address</a></p></li>
-<li><p><a href="https://data.census.gov/profile">Pre-Built Profiles</a></p></li>
-<li><p><a href="https://www.census.gov/library/fact-sheets.html">Fact Sheets</a></p></li>
-<li><p><a href="https://www.census.gov/quickfacts/">Quick Facts</a></p></li>
-<li><p><a href="https://www.census.gov/data/data-tools/survey-explorer/">Survey Explorer</a></p></li>
-<li><p><a href="https://data.census.gov/">Data.Census.Gov</a></p></li>
+<li><p>Housed at the University of Minnesota</p></li>
+<li><p>The IPUMS National Historical Geographic Information System (NHGIS) provides free online access to summary statistics and GIS files for U.S. censuses and other nationwide surveys from 1790 through the present.</p></li>
+<li><p>The National Historical Geographic Information System (NHGIS) provides easy access to summary tables and time series of population, housing, agriculture, and economic data, along with GIS-compatible mapping files, for years from 1790 through the present and for all levels of U.S. census geography, including states, counties, tracts, and blocks.</p></li>
 </ul>
-<p>Free Learning Resources:</p>
-<ul>
-<li><p><a href="https://www.census.gov/data/academy.html">Census Academy Courses/Webinars</a></p></li>
-<li><p><a href="https://www.nhgis.org/">National Historic Geographic Info System</a></p></li>
-</ul>
-<p>Advantages of API — Minimize chaos &amp; navigation clutter</p>
 </div>
+</section>
+<section id="access-via-api" class="slide level2">
+<h2>Access via API</h2>
+<p>Professional tools for professional purposes</p>
+<p>Reproducible, reusable code</p>
+<p>Minimize chaos &amp; navigation clutter</p>
+<p>Point and click is not future-proof</p>
+<p>Do it for your future self</p>
 </section>
 <section id="lets-start" class="slide level2">
-<h2>Let’s Start!</h2>
-<p>Materials:</p>
+<h2>Let’s start</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Do this extra step the first time</span></span>
+<span id="cb1-2"><a></a><span class="co"># install.packages(c("tidycensus", "tidygeocoder", "censusapi", "tidyverse", "mapview"))</span></span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(tidycensus)</span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(tidyverse) <span class="co"># dplyr and ggplot2</span></span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(mapview)</span>
+<span id="cb1-7"><a></a><span class="fu">library</span>(censusapi)</span>
+<span id="cb1-8"><a></a><span class="fu">library</span>(tidygeocoder) </span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a><span class="co"># Check if you already have a CENSUS_KEY or CENSUS_API_KEY saved</span></span>
+<span id="cb1-11"><a></a><span class="fu">get_api_key</span>() </span>
+<span id="cb1-12"><a></a></span>
+<span id="cb1-13"><a></a><span class="co"># If your key returns, no further action is needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="set-up-census-api-key" class="slide level2">
+<h2>Set Up Census API Key</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># If not, use the functions you've already loaded </span></span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="co"># To add your key to your R environment file</span></span>
+<span id="cb2-4"><a></a><span class="fu">census_api_key</span>(<span class="st">"PASTEYOURKEYHERE"</span>, <span class="at">overwrite =</span> <span class="cn">FALSE</span>, <span class="at">install =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a><span class="co"># Reload .Renviron and check again</span></span>
+<span id="cb2-7"><a></a><span class="fu">readRenviron</span>(<span class="st">"~/.Renviron"</span>)</span>
+<span id="cb2-8"><a></a></span>
+<span id="cb2-9"><a></a><span class="co"># Confirm that the expected key prints to Console</span></span>
+<span id="cb2-10"><a></a><span class="fu">get_api_key</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Applause!!!</p>
+</section>
+<section id="demographic-housing-characteristics-dhc" class="slide level2">
+<h2>Demographic &amp; Housing Characteristics (DHC)</h2>
+<p>“The Decennial Census”</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Using the load_variables() function</span></span>
+<span id="cb3-2"><a></a><span class="co"># From the tidycensus package</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a>vars_dhc <span class="ot">=</span> <span class="fu">load_variables</span>(<span class="dv">2020</span>, <span class="at">dataset =</span> <span class="st">"dhc"</span>)</span>
+<span id="cb3-5"><a></a></span>
+<span id="cb3-6"><a></a><span class="co"># View(vars_dhc)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Run <code>View(vars_dhc)</code> and sort by name</p>
 <ul>
-<li><p>Slides and scripts published at <a href="https://pricele2.github.io/blog.html">pricele2.github.io/blog</a></p></li>
-<li><p>API Key registered to Baker Ripley, via Jorge Martinez</p></li>
-<li><p>CSVs at <a href="https://drive.google.com/drive/folders/1XAhhvJAgn961SCvWq33m_gE9SSNdR9k7?usp=sharing">my Google Drive URL</a></p></li>
+<li><p>Prefix H ~ Housing (683 variables)</p></li>
+<li><p>Prefix P ~ Population</p></li>
+</ul>
+<p><strong>What patterns do you see? </strong></p>
+</section>
+<section id="redistricting-dataset-pl" class="slide level2">
+<h2>Redistricting Dataset (PL)</h2>
+<p>Smaller dataset produced from DHC for redistricting under Public Law 94-171 (PL)</p>
+<p>The summary file tables include:</p>
+<p>P1. – Race</p>
+<p>P2. – Hispanic or Latino, and not Hispanic or Latino by Race</p>
+<p>P3. – Race for the Population 18 Years and Over</p>
+<p>P4. – Hispanic or Latino, by Race for the Population 18 Years and Over</p>
+<p>P5. – Group Quarters Population by Major Group Quarters Type</p>
+<p>H1. – Occupancy Status (Housing)</p>
+</section>
+<section id="p1_001n-total-pop-from-dhc" class="slide level2">
+<h2><strong>P1_001N</strong> : Total Pop from DHC</h2>
+<p>Let’s use the script!</p>
+<p>By default, <code>get_decennial()</code> sets the arguments year = 2020 and sumfile = “pl”.</p>
+<p>The <code>county</code> field accepts a string or FIPS code (“201”).</p>
+<p>Try “Harris” first.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>harris_pop_2020 <span class="ot">=</span> <span class="fu">get_decennial</span>(</span>
+<span id="cb4-2"><a></a>  <span class="at">geography =</span> <span class="st">"tract"</span>,</span>
+<span id="cb4-3"><a></a>  <span class="at">variables =</span> <span class="st">"P1_001N"</span>, <span class="co"># TOTAL POPULATION</span></span>
+<span id="cb4-4"><a></a>  <span class="at">state =</span> <span class="st">"TX"</span>,</span>
+<span id="cb4-5"><a></a>  <span class="at">county =</span> <span class="st">"Harris County"</span>, </span>
+<span id="cb4-6"><a></a>  <span class="at">sumfile =</span> <span class="st">"pl"</span>, </span>
+<span id="cb4-7"><a></a>  <span class="at">year =</span> <span class="dv">2020</span>, </span>
+<span id="cb4-8"><a></a>  <span class="at">geometry =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb4-9"><a></a>  <span class="at">show_call =</span> <span class="cn">TRUE</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="harris-county-2020" class="slide level2">
+<h2>Harris County, 2020</h2>
+<p>Number of units in the geography</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">length</span>(<span class="fu">unique</span>(harris_pop_2020<span class="sc">$</span>GEOID))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1115</code></pre>
+</div>
+</div>
+<p>And here is our total population:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>h_pop <span class="ot">=</span> harris_pop_2020 <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a></a>  <span class="fu">group_by</span>(variable) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a></a>  <span class="fu">summarise</span>(<span class="at">pop =</span> <span class="fu">sum</span>(value))</span>
+<span id="cb7-4"><a></a></span>
+<span id="cb7-5"><a></a><span class="fu">print</span>(h_pop[<span class="dv">1</span>,])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  variable     pop
+  &lt;chr&gt;      &lt;dbl&gt;
+1 P1_001N  4731145</code></pre>
+</div>
+</div>
+<p>What happens when you swap in <code>year = 2010</code>?</p>
+</section>
+<section id="p001001-population-from-pl-2010" class="slide level2">
+<h2><strong>P001001</strong> : Population from PL 2010</h2>
+<p>Different variable name for <code>Total Population</code>!</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>vars_pl_2010 <span class="ot">=</span> <span class="fu">load_variables</span>(<span class="dv">2010</span>, <span class="st">"pl"</span>) <span class="co"># Let's look for it</span></span>
+<span id="cb9-2"><a></a></span>
+<span id="cb9-3"><a></a>harris_pop_2010 <span class="ot">=</span> <span class="fu">get_decennial</span>(</span>
+<span id="cb9-4"><a></a>  <span class="at">geography =</span> <span class="st">"tract"</span>,</span>
+<span id="cb9-5"><a></a>  <span class="co"># variables = "P1_001N", # Varname from 2020 </span></span>
+<span id="cb9-6"><a></a>  <span class="at">variables =</span> <span class="st">"P001001"</span>,</span>
+<span id="cb9-7"><a></a>  <span class="at">state =</span> <span class="st">"TX"</span>,</span>
+<span id="cb9-8"><a></a>  <span class="at">county =</span> <span class="st">"Harris County"</span>, </span>
+<span id="cb9-9"><a></a>  <span class="at">sumfile =</span> <span class="st">"pl"</span>, </span>
+<span id="cb9-10"><a></a>  <span class="at">year =</span> <span class="dv">2010</span>, </span>
+<span id="cb9-11"><a></a>  <span class="at">geometry =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb9-12"><a></a>  <span class="at">show_call =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-13"><a></a></span>
+<span id="cb9-14"><a></a>h_pop_2010 <span class="ot">=</span> harris_pop_2010 <span class="sc">|&gt;</span> </span>
+<span id="cb9-15"><a></a>  <span class="fu">group_by</span>(variable) <span class="sc">|&gt;</span> </span>
+<span id="cb9-16"><a></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">sum</span>(value))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>What do you learn when you run <code>print(h_pop_2010[1,])</code> ?</p>
+</section>
+<section id="population-in-all-13-counties" class="slide level2">
+<h2>Population in all 13 counties</h2>
+<p>13 counties served by Baker Ripley and Workforce Solutions</p>
+<p>List at <a href="https://www.wrksolutions.com/regional-economic-data/quarterly-employment-reports-by-county">https://www.wrksolutions.com/regional-economic-data/</a></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Another tool is tidycensus::data()</span></span>
+<span id="cb10-2"><a></a>fips_codes <span class="ot">=</span> <span class="fu">data</span>(<span class="st">"fips_codes"</span>)</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a>ws_gulf_coast <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"015"</span>, <span class="st">"039"</span>, <span class="st">"071"</span>, <span class="st">"089"</span>, <span class="st">"157"</span>, <span class="st">"167"</span>, <span class="st">"291"</span>, <span class="st">"321"</span>,<span class="st">"339"</span>, <span class="st">"471"</span>, <span class="st">"473"</span>, <span class="st">"481"</span>, <span class="st">"201"</span>)</span>
+<span id="cb10-5"><a></a></span>
+<span id="cb10-6"><a></a>gulf_coast_pop_2020 <span class="ot">=</span> <span class="fu">get_decennial</span>(</span>
+<span id="cb10-7"><a></a>  <span class="at">geography =</span> <span class="st">"block group"</span>, </span>
+<span id="cb10-8"><a></a>  <span class="at">variables =</span> <span class="st">"P1_001N"</span>, <span class="co"># TOTAL POPULATION</span></span>
+<span id="cb10-9"><a></a>  <span class="at">state =</span> <span class="st">"TX"</span>, </span>
+<span id="cb10-10"><a></a>  <span class="at">county =</span> ws_gulf_coast,</span>
+<span id="cb10-11"><a></a>  <span class="at">sumfile =</span> <span class="st">"dhc"</span>, <span class="at">year =</span> <span class="dv">2020</span>, <span class="at">geometry =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb10-12"><a></a>  <span class="at">show_call =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-13"><a></a></span>
+<span id="cb10-14"><a></a>all_pop <span class="ot">=</span> gulf_coast_pop_2020 <span class="sc">|&gt;</span> <span class="fu">group_by</span>(variable) <span class="sc">|&gt;</span> </span>
+<span id="cb10-15"><a></a>  <span class="fu">summarise</span>(<span class="at">pop =</span> <span class="fu">sum</span>(value))  <span class="co"># 7,297,022</span></span>
+<span id="cb10-16"><a></a></span>
+<span id="cb10-17"><a></a><span class="fu">print</span>(all_pop[<span class="dv">1</span>,])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  variable     pop
+  &lt;chr&gt;      &lt;dbl&gt;
+1 P1_001N  7297022</code></pre>
+</div>
+</div>
+</section>
+<section id="try-housing-occupancy-by-county" class="slide level2">
+<h2>Try Housing Occupancy, by County</h2>
+<p>Here, using the DHC file and variable names</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="do">## 13 Counties served by Workforce Solutions</span></span>
+<span id="cb12-2"><a></a>gulf_housing_2020 <span class="ot">=</span> <span class="fu">get_decennial</span>(</span>
+<span id="cb12-3"><a></a>    <span class="at">geography =</span> <span class="st">"county"</span>, </span>
+<span id="cb12-4"><a></a>    <span class="at">variables =</span> <span class="fu">c</span>(<span class="st">"H3_002N"</span>, <span class="st">"H3_003N"</span>), <span class="co"># Occupied, Vacant</span></span>
+<span id="cb12-5"><a></a>    <span class="at">summary_var =</span> <span class="st">"H3_001N"</span>, <span class="co"># total Housing Units</span></span>
+<span id="cb12-6"><a></a>    <span class="at">state =</span> <span class="st">"TX"</span>, </span>
+<span id="cb12-7"><a></a>    <span class="at">county =</span> ws_gulf_coast,</span>
+<span id="cb12-8"><a></a>    <span class="at">sumfile =</span> <span class="st">"dhc"</span>, </span>
+<span id="cb12-9"><a></a>    <span class="at">year =</span> <span class="dv">2020</span>, <span class="at">geometry =</span> <span class="cn">TRUE</span>, <span class="co"># Changed from FALSE</span></span>
+<span id="cb12-10"><a></a>    <span class="at">show_call =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-11"><a></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> <span class="dv">100</span> <span class="sc">*</span> (value <span class="sc">/</span>  summary_value)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Once we have the datset, we plot in the next step:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># Note: the mutate / value / summary syntax here is specific to tidycensus</span></span>
+<span id="cb13-2"><a></a><span class="co"># Otherwise would require a group_by() summarize() situation</span></span>
+<span id="cb13-3"><a></a></span>
+<span id="cb13-4"><a></a><span class="fu">ggplot</span>(gulf_housing_2020, <span class="fu">aes</span>(<span class="at">fill =</span> pct, <span class="at">color =</span> pct)) <span class="sc">+</span> </span>
+<span id="cb13-5"><a></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
+<span id="cb13-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> variable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+</section>
+<section id="try-housing-occupancy-by-county-output" class="slide level2 output-location-slide"><h2>Try Housing Occupancy, by County</h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/housing.map2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></section><section id="lets-clean-up-the-map" class="slide level2">
+<h2>Let’s Clean Up The Map</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>gulf_counties2 <span class="ot">=</span> gulf_housing_2020 <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a></a>  <span class="fu">rename</span>(summary_value, <span class="st">"Housing Units"</span> <span class="ot">=</span> summary_value) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a></a>  <span class="fu">mutate</span>(<span class="at">housing_status =</span></span>
+<span id="cb14-4"><a></a>    <span class="fu">case_when</span>(</span>
+<span id="cb14-5"><a></a>      variable <span class="sc">==</span> <span class="st">"H3_002N"</span> <span class="sc">~</span> <span class="st">"Occupied"</span>, </span>
+<span id="cb14-6"><a></a>      variable <span class="sc">==</span> <span class="st">"H3_003N"</span> <span class="sc">~</span> <span class="st">"Vacant"</span></span>
+<span id="cb14-7"><a></a>    )) <span class="sc">|&gt;</span> </span>
+<span id="cb14-8"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>variable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Rename items, and then reverse-code the fill and color</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(gulf_counties2, </span>
+<span id="cb15-2"><a></a>       <span class="fu">aes</span>(<span class="at">fill =</span> <span class="sc">-</span>pct, <span class="at">color =</span> <span class="sc">-</span>pct)) <span class="sc">+</span> </span>
+<span id="cb15-3"><a></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
+<span id="cb15-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> housing_status)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+</section>
+<section id="lets-clean-up-the-map-output" class="slide level2 output-location-slide"><h2>Let’s Clean Up The Map</h2><div class="cell output-location-slide">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/housing.map4-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></section><section>
+<section id="what-about-characteristics-of-our-head-start-neighborhoods" class="title-slide slide level1 center">
+<h1>What about characteristics of our Head Start neighborhoods?</h1>
+
+</section>
+<section id="first-things-first" class="slide level2">
+<h2>First things first</h2>
+</section>
+<section id="but-2020-is-ancient-history" class="slide level2">
+<h2>But 2020 is Ancient History</h2>
+<p>DCH and PL are good datasets for 2020</p>
+<p>What about everything that’s happened since then?!</p>
+</section>
+<section id="acs-and-population-changes" class="slide level2">
+<h2>ACS and Population Changes</h2>
+<p><strong>American Community Survey (Annual).</strong> The social and economic needs of communities, across many demographic characteristics.</p>
+<ul>
+<li><code>tidycensus::get_acs()</code> also handles ZIP or ZCTRA inputs</li>
 </ul>
 </section>
-<section id="open-your-program" class="slide level2">
-<h2>Open Your Program</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Do this first</span></span>
-<span id="cb1-2"><a></a><span class="co"># install.packages(c("tidycensus", "mapview", "tidygeocoder", "ipumsr", "censusapi", "tidyverse"))</span></span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a><span class="co"># Run this instead every time afterwards</span></span>
-<span id="cb1-5"><a></a>my_packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidycensus"</span>, <span class="st">"mapview"</span>, <span class="st">"tidygeocoder"</span>, <span class="st">"ipumsr"</span>, <span class="st">"censusapi"</span>, <span class="st">"tidyverse"</span>)</span>
-<span id="cb1-6"><a></a><span class="fu">lapply</span>(my_packages, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<h3 id="set-up-census-api-key">Set Up Census API Key</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Check to see if you already have a CENSUS_KEY or CENSUS_API_KEY saved</span></span>
-<span id="cb2-2"><a></a><span class="co"># If so, no further action is needed</span></span>
-<span id="cb2-3"><a></a><span class="fu">get_api_key</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "a9ed6de474ab2440222ac46d41626f9cc82b2f76"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># If not, add your key to your Renviron file</span></span>
-<span id="cb4-2"><a></a><span class="fu">census_api_key</span>(<span class="st">"PASTEYOURKEYHERE"</span>, <span class="at">overwrite =</span> <span class="cn">FALSE</span>, <span class="at">install =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="co"># Reload .Renviron the first time</span></span>
-<span id="cb4-5"><a></a><span class="fu">readRenviron</span>(<span class="st">"~/.Renviron"</span>)</span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a><span class="co"># Confirm that the expected key is output in your R console</span></span>
-<span id="cb4-8"><a></a><span class="fu">get_api_key</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<section id="saipe-and-children" class="slide level2">
+<h2>SAIPE and Children</h2>
+<p><strong>Small Area Income and Poverty Estimates (Annual).</strong> Income and poverty statistics for all school districts, counties, and states.</p>
+<ul>
+<li><p>Not included in <code>tidycensus</code> functionality</p></li>
+<li><p>Is included in <code>censusapi</code> toolkit</p>
+<p>“timeseries/poverty/saipe” # States and Counties, through 2024</p>
+<p>“timeseries/poverty/saipe/schdist” # Districts, through 2024</p></li>
+</ul>
+</section></section>
+<section>
+<section id="putting-it-all-together" class="title-slide slide level1 center">
+<h1>Putting It All Together</h1>
+
 </section>
-<section id="harris-county-decennial" class="slide level2">
-<h2>Harris County / Decennial</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># From the tidycensus package:</span></span>
-<span id="cb5-2"><a></a><span class="co"># Demographic and Housing Characteristics File ("Decennial Census")</span></span>
-<span id="cb5-3"><a></a>vars_dhc <span class="ot">=</span> <span class="fu">load_variables</span>(<span class="dv">2020</span>, <span class="at">dataset =</span> <span class="st">"dhc"</span>)</span>
-<span id="cb5-4"><a></a><span class="fu">View</span>(vars_dhc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r code-overflow-wrap number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>harris_blocks <span class="ot">=</span> <span class="fu">get_decennial</span>(</span>
-<span id="cb6-2"><a></a>  <span class="at">geography =</span> <span class="st">"block group"</span>, </span>
-<span id="cb6-3"><a></a>  <span class="at">variables =</span> <span class="st">"P1_001N"</span>, <span class="co"># TOTAL POPULATION</span></span>
-<span id="cb6-4"><a></a>  <span class="at">state =</span> <span class="st">"TX"</span>,</span>
-<span id="cb6-5"><a></a>  <span class="at">county =</span> <span class="st">"Harris County"</span>,</span>
-<span id="cb6-6"><a></a>  <span class="at">sumfile =</span> <span class="st">"dhc"</span>,</span>
-<span id="cb6-7"><a></a>  <span class="at">year =</span> <span class="dv">2020</span>,</span>
-<span id="cb6-8"><a></a>  <span class="at">geometry =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb6-9"><a></a>  <span class="at">show_call =</span> <span class="cn">TRUE</span></span>
-<span id="cb6-10"><a></a>)</span>
-<span id="cb6-11"><a></a></span>
-<span id="cb6-12"><a></a><span class="fu">View</span>(harris_blocks)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
+<section id="br-locations" class="slide level2">
+<h2>BR locations</h2>
+<p>Batch geocode</p>
+<p>Locate</p>
+<p>Identify datasets</p>
+<aside class="notes">
+<!-- [**Population Estimates Program (PEP)**](https://www.census.gov/programs-surveys/popest.html) -->
+<!-- - Annual Estimates "released on a flow basis"   -->
+<!-- - The latest "full vintage available" is the Vintage 2024 estimates series.   -->
+<!-- - "Vintage 2025" county estimates scheduled June 2026 -->
+<!-- - PEP not supported through API as of 2020  -->
+<!-- - What's available, and what are the varnames?  -->
+<!-- ```{r} -->
+<!-- list_apis = censusapi::listCensusApis() -->
+<!-- counties_pop_now = get_estimates( -->
+<!--   geography = "county",  -->
+<!--   product = "population", -->
+<!--   variables = "P1_001N",  -->
+<!--   state = "TX", -->
+<!--   county = ws_gulf_coast, -->
+<!--   sumfile = "dhc", -->
+<!--   year = 2020, -->
+<!--   geometry = FALSE,  -->
+<!--   show_call = TRUE -->
+<!-- ) -->
+<!-- ``` -->
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!-- ## Block-Level: Decennial Only -->
 <!-- https://walker-data.com/tidycensus/articles/basic-usage.html#geography-in-tidycensus -->
 <!-- ## Census Geographies vs Others -->
@@ -408,18 +687,12 @@ Lauren Price
 <!-- getOption("max.print") -->
 <!-- options(max.print = 50000) -->
 <!-- local_api_list = censusapi::listCensusApis() View(local_api_list) -->
-<!-- ## Counties served by Workforce Solutions -->
-<!-- Listed at https://www.wrksolutions.com/regional-economic-data/quarterly-employment-reports-by-county -->
 <!-- ## Behavior Risk Factor Surveillance System (BRFSS) -->
 <!-- Glossary at https://data.cdc.gov/Survey-Data/Behavior-Risk-Factor-Surveillance-System-BRFSS-Glo/5amh-5sx3/about_data -->
 
 
-</section>
-    <section id="harris-county-decennial-output" class="slide level2 output-location-slide"><h2>Harris County / Decennial</h2><div class="cell output-location-slide">
-
-</div></section><section id="harris-county-decennial-output" class="slide level2 output-location-slide"><h2>Harris County / Decennial</h2><div class="cell output-location-slide">
-
-</div></section></div>
+</section></section>
+    </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
 
