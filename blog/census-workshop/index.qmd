@@ -465,14 +465,11 @@ ggplot(gulf_counties2,
   facet_wrap(~ housing_status)
 ```
 
-# What are some characteristics of Head Start neighborhoods?
+## Brainstorm Time 
+
 
 ## First things first
-
-
-
-
-
+What are some characteristics of Head Start neighborhoods?
 
 
 ## But 2020 is Ancient History
@@ -486,7 +483,6 @@ What about everything that's happened since then?!
 **American Community Survey (Annual).** The social and economic needs of communities, across many demographic characteristics.
 
 - `tidycensus::get_acs()` also handles ZIP or ZCTRA inputs  
-
 
 
 ## SAIPE and Children
