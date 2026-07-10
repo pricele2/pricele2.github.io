@@ -39,7 +39,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Working with US Census Data\n\n\n\n\n\n\nLauren Price\n\n\nJun 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nHello World\n\n\n\nQuarto\n\nR\n\nR-Ladies+\n\nCommunity\n\n\n\nBig thanks to Sam Shanny-Csik!\n\n\n\nLauren Price\n\n\nMay 21, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "index\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with US Census Data\n\n\n\n\n\n\nLauren Price\n\n\nJun 24, 2026\n\n\n\n\n\n\n\n\n\n\n\nWorking with US Census Data\n\n\n\n\n\n\nLauren Price\n\n\nJun 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nHello World\n\n\n\nQuarto\n\nR\n\nR-Ladies+\n\nCommunity\n\n\n\nBig thanks to Sam Shanny-Csik!\n\n\n\nLauren Price\n\n\nMay 21, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "publications.html",
@@ -796,5 +796,12 @@
     "title": "Working with US Census Data",
     "section": "Thank you!",
     "text": "Thank you!\nFind me on LinkedIn"
+  },
+  {
+    "objectID": "blog/harris-immigrants/index.html",
+    "href": "blog/harris-immigrants/index.html",
+    "title": "index",
+    "section": "",
+    "text": "One of the accidental perks of being occasionally Too Online is that you run across a real-world question whilst you’ve got the time to address it. The flap this week is about Specific Actors criticizing the NYC immigration office for excluding their groups of personal interest — Jewish, Italian, and Irish groups — on a map of the city’s immigrant neighborhoods. You can read the original article here if you are so inclined.\nPersonally I am of the boring opinion that this map document accomplished what it was designed to do: *“The map was intended to show parts of the city that have ‘substantial foreign-born populations from regions and countries around the world,’ according to City Hall.* This is in contrast to the”immigrant-descended” communities\nBut the article did get me thinking about Census data, and what data could drive a similar map for Houston and its metro area. Or for any other metro area, really."
   }
 ]

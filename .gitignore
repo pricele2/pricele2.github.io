@@ -9,6 +9,9 @@
 /.quarto/
 **/*.quarto_ipynb
 
-~/R/*/data/*
+/site_libs/*
 
 *.csv
+*.ods
+
+blog/census-workshop/data/2020Census_PL94_171Redistricting_StatesTechDoc_English.pdf

@@ -1,0 +1,11 @@
+---
+title: "index"
+format: html
+---
+
+One of the accidental perks of being occasionally Too Online is that you run across a real-world question whilst you've got the time to address it. The flap this week is about Specific Actors criticizing the NYC immigration office for excluding their groups of personal interest —  Jewish, Italian, and Irish groups — on a map of the city's immigrant neighborhoods. You can read the [original article here](https://www.thejc.com/news/usa/mamdani-excluding-jews-map-nyc-immigrant-neighbourhoods-wdtftlwu) if you are so inclined. 
+
+Personally I am of the boring opinion that this map document accomplished what it was designed to do: *"The map was intended to show parts of the city that have 'substantial foreign-born populations from regions and countries around the world,' according to City Hall.* This is in contrast to the "immigrant-descended" communities 
+
+But the article did get me thinking about Census data, and what data could drive a similar map for Houston and its metro area. Or for any other metro area, really. 
+
