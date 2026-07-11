@@ -48,11 +48,12 @@ Slides and code at <https://pricele2.github.io/blog/census-workshop/>
 
 Plain text API key registered to Baker Ripley
 
-Practice CSVs at [my Google Drive URL](https://drive.google.com/drive/folders/1XAhhvJAgn961SCvWq33m_gE9SSNdR9k7?usp=sharing)
-
-[Optional Resource:]() Kyle Walker's *Analyzing US Census Data: Methods, Maps, and Models in R* (CC-BY-NC 2023)
+CSVs at [my Google Drive URL](https://drive.google.com/drive/folders/1XAhhvJAgn961SCvWq33m_gE9SSNdR9k7?usp=sharing)
 
 Searchable [Glossary at Census.gov](https://www.census.gov/glossary/)
+
+Optional Resource: Kyle Walker's *Analyzing US Census Data: Methods, Maps, and Models in R* (CC-BY-NC 2023)
+
 
 ## Federal Responsibility
 
@@ -90,7 +91,7 @@ Sometimes mundane, sometimes controversial
 
 Who counts as a person? As a citizen?
 
-- Slavery, citizenship 
+- Slavery, immigration, citizenship
 
 - Indigenous Peoples and LGBTQ+ civil rights
 
@@ -98,7 +99,7 @@ Who counts as a person? As a citizen?
 
 - Door-to-door "enumeration" for Decennial
 
-- Statistical "fuzzing" through noise injection
+- Privacy protections via statistical noise injection
 
 ## Census Data Serves Many Purposes
 
@@ -108,21 +109,21 @@ Each has its own life cycle and characteristics
 
 Drives annual distribution of **more than \$675 billion** in federal funds to local, state, and tribal governments
 
-## Three Data Products
+## Specific Data Products
 
-**Decennial Census of Population and Housing (10-Year).**
+**Decennial Census of Population and Housing (10-Year)**
 
 - As required by US constitution, used for redistricting
 
-**American Community Survey (Annual).**
+**American Community Survey (Annual)**
 
 - The social and economic needs of communities, across many demographic characteristics
 
-**Small Area Income and Poverty Estimates (Annual).**
+**Small Area Income and Poverty Estimates (Annual)**
 
 - Income and poverty statistics for all school districts, counties, and states
 
-So! What do we need to know to get started? 
+So! What do we need to know to get started?
 
 ## Geographies Start with Blocks
 
@@ -176,22 +177,21 @@ Let's look up the [Census Geographies for Baker Ripley Central](https://geocodin
 
 [Data.Census.Gov](https://data.census.gov/)
 
-Great for exploring what exists, or first-pass "find a variable" searches
+- Great for exploring what exists, or initial "find a variable" searches
 
 ## For Reflection
 
-What *characteristics* of your clientele can be contextualized by Census data? 
+What *characteristics* of your clients can be contextualized by Census data?
 
 - Young children in poverty (e.g., Head Start)
 
 - Veteran status
 
-- Small business needs, planning 
+- Small business needs, planning
 
 - Need-based eligibility (Utilites, etc.)
 
 Almost every aspect of BR's programs can be contextualized with Census data.
-
 
 ## Plus Free Learning Resources:
 
@@ -200,30 +200,28 @@ Almost every aspect of BR's programs can be contextualized with Census data.
 
 [Email Updates from Census](https://public.govdelivery.com/accounts/USCENSUS/subscriber/new)
 
-[Textbook by TCU prof Kyle Walker](https://walker-data.com/census-r/) *Analyzing US Census Data: Methods, Maps, and Models in R* (CC-BY-NC 2023)
+[Textbook by TCU prof Kyle Walker](https://walker-data.com/census-r/) 
+
+- *Analyzing US Census Data: Methods, Maps, and Models in R* (CC-BY-NC 2023)
 
 [National Historic Geographic Info System](https://www.nhgis.org/)
 
 - Housed at the University of Minnesota
 
-- Free, with account registration required 
+- Free, with account registration required
 
 - The National Historical Geographic Information System (NHGIS) provides easy access to summary tables and time series of population, housing, agriculture, and economic data, along with GIS-compatible mapping files, for years from 1790 through the present and for all levels of U.S. census geography, including states, counties, tracts, and blocks.
 :::
 
-## Why API? 
-
-Many data resources already available -- why API? 
+## Why API?
 
 Professional tools for professional purposes
 
-Reproducible, reusable code
+Reproducible, reusable, modular code
 
 Minimize chaos & navigation clutter
 
-Point and click is not future-proof 
-
-- Recent overhaul of data.census.gov
+Point and click is not future-proof (recent overhaul of data.census.gov)
 
 Do it for your future self
 
@@ -271,9 +269,9 @@ readRenviron("~/.Renviron")
 get_api_key() 
 ```
 
-Give yourself a round of applause!!!
+Did it work? Give yourself a round of applause!!!
 
-## "The Decennial Census" 
+## "The Decennial Census"
 
 Let's look at the Demographic & Housing Characteristics (DHC) data
 
@@ -302,7 +300,7 @@ In the chat: **What other patterns do you see?**
 
 ## Redistricting Dataset (PL)
 
-Smaller dataset extracted from DHC for redistricting under Public Law 94-171 (PL)
+Slimmer dataset extracted from DHC for redistricting per Public Law 94-171
 
 The summary file tables include:
 
@@ -318,7 +316,7 @@ P5. – Group Quarters Population by Major Group Quarters Type
 
 H1. – Occupancy Status (Housing)
 
-## **P1_001N** : Total Pop from DHC 
+## **P1_001N** : Total Pop from DHC
 
 Let's write code to find the total population of a county.
 
@@ -352,14 +350,13 @@ harris_pop_2020 = get_decennial(
 ## Harris County, 2020
 
 Let's look at what returns from the API.
+
 ```{r}
 #| echo: true
 colnames(harris_pop_2020)
 ```
 
-Remember, we asked for `tract` level data. 
-
-Can we find the number of units (`geography = "tract"`) in the county?
+Remember, we asked for `tract` level data. So now we can find the number of units (`geography = "tract"`) in the county.
 
 ```{r}
 #| echo: true
@@ -526,33 +523,33 @@ ggplot(gulf_counties2,
   facet_wrap(~ housing_status)
 ```
 
-## Brainstorm Time
+## Revisiting earlier...
 
-From earlier: What data questions could be relevant to Baker Ripley programs & mission?
+What data questions could be relevant to Baker Ripley programs & mission?
 
 What timepoints are relevant to these questions?
 
-DCH and PL are good datasets for 2020 points in time
+DCH and PL are good datasets for 2020 points in time...
 
-What about *data since then?!*
+But what about *data since then?!*
 
 ## ACS and Population Changes
 
 **American Community Survey (Annual).** The social and economic needs of communities, across many demographic characteristics.
 
-Language spoken at home, education, commuting, employment, mortgage/rent status, income, poverty and health insurance coverage.
+Language spoken at home, education, commuting, employment, mortgage/rent status, income, poverty, and health insurance coverage.
 
 [Subjects in the ACS](https://www.census.gov/programs-surveys/acs/guidance/subjects.html)
 
 [Five Year vs One Year Estimates](https://www.census.gov/programs-surveys/acs/guidance/estimates.html)
 
-<!-- [Which Data Tool or Table Should I Use?](https://www.census.gov/programs-surveys/acs/guidance/which-data-tool.html) -->
+[Which Data Tool or Table Should I Use?](https://www.census.gov/programs-surveys/acs/guidance/which-data-tool.html)
 
 ## Tradeoffs: Recency and Precision
 
 The ACS is the only source of local statistics for most of the 40-plus topics it covers.
 
-Functions in two packages will call data from ACS: 
+Functions in two packages will call data from ACS:
 
 - `tidycensus::get_acs()` also handles ZIP or ZCTRA inputs
 
@@ -560,9 +557,11 @@ Functions in two packages will call data from ACS:
 
 ## SAIPE and Children
 
-**Small Area Income and Poverty Estimates (Annual).** Income and poverty statistics for all school districts, counties, and states.
+**Small Area Income and Poverty Estimates (Annual).** 
 
-- Not included in `tidycensus` functionality
+Income and poverty statistics for all school districts, counties, and states.
+
+- *Not* included in `tidycensus` functionality
 
 - *Is* included in `censusapi` toolkit, through `getCensus()`
 
@@ -588,7 +587,7 @@ censusapi::listCensusApis()
 local_api_list = listCensusApis() 
 ```
 
-So how do we determing which API endpoints might we want? 
+So how do we determine which API endpoints we might want?
 
 ## Metadata to the rescue!
 
@@ -602,48 +601,52 @@ View(local_api_list)
 # options(max.print = 50000)
 ```
 
-The analyst's BFF: `censusapi::listCensusMetadata`
+The analyst's BFF is `censusapi::listCensusMetadata`
 
-Critical argument is `type`:
+A critical argument is `type`:
 
 - "geographies", or "groups", or "variables" (use include_values = TRUE)
 
-- Can confirm here that Block-Level is for the Decennial (PL or DHC) survey only
+- See here that Block level is for the Decennial (PL or DHC) survey only
 
-What might we reasonably conclude about the rows with `NA` in the `vintage` field? Consider (1) what we know from their website about some of the rows (`titles`), and  (2) what we see in the `temporal` field. 
+What might we reasonably conclude about the rows with `NA` in the `vintage` field? Consider (1) what we know from their website about some of the rows (`titles`), and (2) what we see in the `temporal` field.
 
-## Example: Most recent ACS 5-Year
+## Ex: ACS 5-Year Metadata
 
-Heads up: This will take a bit to run... so keep it as an object.
 ```{r}
 #| label: list.census.metadata
-#| eval: true
+#| eval: false
+#| echo: true
+#| code-overflow: wrap
+#| output: false
+
 vars_acs5 = listCensusMetadata(
   "acs/acs5",
   vintage = 2024,
   key = NULL,
   type = "variables" #  list of variable names and descriptions 
-)
+) 
 ```
-Once you have a sense of which survey and which data elements are relevant...
 
-## Where are your geographies of interest? 
+Heads up: This will take a bit to run... which is why we keep it.
 
-*"What are some characteristics of our neighborhoods?"*
+So once you have a sense of which survey and which data elements are relevant...
 
-Requires knowing the census 'address' of the programs!
+## Where are your addresses?
+
+Asking *"What are some characteristics of our neighborhoods?"*... requires knowing the census 'address' of the programs!
 
 You can visit [geocoding.geo.census.gov](https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?form)...
 
 - This "point and click" tool makes sense for one or two addresses
 
-- But what about thousands of addresses? 
+- But what about thousands of addresses?
 
 ## Geocode with `tidygeocoder`
 
 The functions in this package work on one address, or a whole dataframe.
 
-Let's see what can be done with one address, and with batches. 
+Let's see what can be done with one address, and with batches.
 
 ```{r}
 #| label: geocode.one
@@ -668,7 +671,11 @@ baker_r_sf <- st_as_sf(baker_r,
 # Draw the radius within 5km (5000 m)
 br_5km <- baker_r_sf |>  st_buffer(5000) 
 ```
+
+Wait... did you say "draw a radius"?
+
 ## The fastest map you've ever coded
+
 ```{r}
 #| label: geocode.one.mapview
 #| eval: true
@@ -680,35 +687,33 @@ mapview(br_5km) + mapview(baker_r_sf)
 
 ## Let's see our neighbors
 
-We've drawn the circle, so let's see who is inside it. 
+We've drawn a circle, so let's see who is inside it.
 
-Now we have `br_5km`, an input area representing the 5 kilometers around the address. So we can use this as the `filter_by` argument in `get_decennial()` or `get_acs()`.
+Now we have `br_5km`, an input area representing the 5 kilometers around the address. So we can use this for the `filter_by` in `get_decennial()` or `get_acs()`.
 
-This gives back the Census block groups within 5km (5000 meters) of the address without any additional need for spatial overlay.
+This gives back the Census block groups within 5km (5000 meters) of the address.
 
 ```{r}
 #| label: pull.blockpop.dhc
 #| eval: true
 #| echo: true
 #| code-overflow: wrap
-#| output: true
+#| output: false
 
 # Using the same tidycensus::get_decennial() from earlier
 block_pop_brc <- get_decennial(
   geography = "block group",
   variables = "P1_001N",
-  state = "TX",
-  county = "Harris County",
+  state = "TX", county = "Harris County",
   geometry = TRUE,
   filter_by = br_5km,
-  sumfile = "dhc",
-  year = 2020
+  sumfile = "dhc", year = 2020
 ) 
 ```
 
 ## Map and Summarize
 
-Per 2020 DHC, about 200,000 people live within 5km of this address.  
+Per 2020 DHC, about 200,000 people live within 5km of this address.
 
 ```{r}
 #| label: pull.blockpop.dhc2
@@ -722,11 +727,12 @@ mapview(block_pop_brc)
 sum(block_pop_brc$value) 
 ```
 
-## Now let's geocode all the Head Start sites
+## Now let's geocode Head Start sites
 
-First we'll read in the CSV, converting it to a dataframe. 
+First we'll read in the CSV, converting it to a dataframe.
 
-(Your read_csv path should be where you downloaded the file, in slide 2.)
+Note: Your own `read_csv` path should be where you downloaded it, back in slide 2.
+
 ```{r}
 #| label: geocode.brsites
 #| eval: true
@@ -734,10 +740,11 @@ First we'll read in the CSV, converting it to a dataframe.
 #| code-overflow: wrap
 #| output: false
 # Read in the file, wrangle into tibble without rownames
-all_hs = read_csv("~/R/pricele2.github.io/blog/census-workshop/data/all_ehs_hs_tx_locations.csv") |> as_tibble() |> 
+all_hs = read_csv("~/R/pricele2.github.io/blog/census-workshop/data/all_ehs_hs_tx_locations.csv") |> 
+  as_tibble() |> 
   rename(Add1 = 6) 
 
-colnames(all_hs)
+# colnames(all_hs) 
 
 dim(all_hs)
 
@@ -756,20 +763,16 @@ colSums(is.na(all_hs)) #missing values ~ probably need data cleaning
 # Note the function geocode, not geo, used for a dataframe
 hs_geos = geocode(
   all_hs, # name of the dataframe
-  street = "Add1",
-  city = "city",
-  state = "state",
-  postalcode = "zip",
-  method = "census",
-  full_results = TRUE,
+  street = "Add1", city = "city", state = "state", postalcode = "zip",
+  method = "census", full_results = TRUE,
   api_options = list(census_return_type = "geographies")
 ) 
-colnames(hs_geos)
+# colnames(hs_geos)
 
 hs_geos = hs_geos |> select(grant_Number, program_type_label, recipient_name, service_location_name, input_address, funded_slots, status, lat, long, ends_with("fips"), starts_with("match"), starts_with("census"), starts_with("tiger"))
-
 ```
-Consider: Why does it confirm `Passing 983 addresses` instead of 1267?
+
+Consider: Why does it tell us `Passing 983 addresses` instead of 1267?
 
 ```{r}
 table(hs_geos$match_type)
@@ -777,7 +780,7 @@ table(hs_geos$match_type)
 
 ## Filter for `ws_gulf_coast` from earlier
 
-You could also do this earlier, and spend your daily API calls more frugally. But then you have to deal with string variables and 13 county names. 
+You could also do this earlier, and spend your daily API calls more frugally. But then you have to deal with string variables and 13 county names.
 
 ```{r}
 #| label: geocode.brsites.filter
@@ -815,7 +818,7 @@ There are 117 unique `input_address`es but 152 rows. What do we know about this 
 #| eval: true
 #| echo: true
 #| code-overflow: wrap
-#| output: true
+#| output: false
 
 vars_acs = load_variables(2024, "acs5") # Searched for "Under 5"
 
@@ -843,13 +846,13 @@ If you wanted to filter for children under 5 in poverty living only in tracts wi
 
 ## Make a Work Plan
 
-- What do I want to learn?  
+- What do I want to learn?
 
-- What data product holds relevant elements?  
+- What data product holds relevant elements?
 
-- What geographic level? What time point? 
+- What geographic level? What time point?
 
-- Consider tradeoffs 
+- Consider tradeoffs
 
 ## In Conclusion
 
@@ -857,7 +860,7 @@ If you wanted to filter for children under 5 in poverty living only in tracts wi
 
 - Writing queries for analysis, and using API endpoints... are gifts to your future self
 
-- Your tax dollars pay for Census: Use it with nerdery! 
+- Your tax dollars pay for Census: Use it with nerdery!
 
 - Map mock-ups or "a draft for feedback" will save you time with leadership
 
