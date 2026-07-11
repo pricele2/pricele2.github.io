@@ -1,0 +1,22 @@
+```{r}
+#| echo: false
+#| eval: false
+# colnames(block_pop_wsgc_u5_pov) # GEOID is 12 chars
+#
+# str_length(block_pop_wsgc_u5_pov$GEOID[1])
+#
+
+# hs_all_5km_2 = hs_all_5km |>
+# mutate(geoid = str_c(state_fips, county_fips, census_tract, census_block, sep =""))
+# str_length(hs_all_5km_2$geoid[1])
+#
+# hs_all_5km_2 = hs_all_5km |>
+# mutate(geoid = str_c(state_fips, county_fips, census_tract, census_block, sep ="")) |>
+#   mutate(GEOID = str_sub(geoid, 1, 12))
+#
+# str_length(hs_all_5km_2$GEOID[1])
+#
+# block_pop_wsgc_u5_pov2 = block_pop_wsgc_u5_pov |>
+#   filter(GEOID %in% hs_all_5km_2$GEOID)
+
+```

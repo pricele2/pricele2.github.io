@@ -262,7 +262,7 @@ get_api_key()
 # If not, use the functions you've already loaded 
 
 # To add your key to your R environment file
-census_api_key("PASTEYOURKEYHERE", overwrite = FALSE, install = TRUE)
+census_api_key("PASTEYOURKEYHERE", overwrite = FALSE, install = TRUE) 
 
 # Reload .Renviron and check again
 readRenviron("~/.Renviron")
@@ -327,7 +327,6 @@ By default, `get_decennial()` sets the arguments year = 2020 and sumfile = "pl".
 What happens if you enter just "Harris" in the `county` field?
 
 The `county` field accepts a string or FIPS code ("201").
-
 
 ```{r}
 #| label: harris.blocks
@@ -565,7 +564,7 @@ Functions in two packages will call data from ACS:
 
 - Not included in `tidycensus` functionality
 
-- Is included in `censusapi` toolkit, through `getCensus()`
+- *Is* included in `censusapi` toolkit, through `getCensus()`
 
   `"timeseries/poverty/saipe"` \# States and Counties, through 2024
 
@@ -589,61 +588,62 @@ censusapi::listCensusApis()
 local_api_list = listCensusApis() 
 ```
 
-What data questions could be relevant to Baker Ripley programs & mission?
+So how do we determing which API endpoints might we want? 
+
+## Metadata to the rescue!
 
 ```{r}
-#| eval: true
+#| eval: false
 #| echo: true
 View(local_api_list)
 
-getOption("max.print")
-
-options(max.print = 50000)
+# Might need to fuss with "max print" setting 
+# getOption("max.print")
+# options(max.print = 50000)
 ```
 
-What can we reasonably conclude about the NAs in the `vintage` field?
-
-## So many data elements and time points!
-
-Metadata to the rescue! `listCensusMetadata`
+The analyst's BFF: `censusapi::listCensusMetadata`
 
 Critical argument is `type`:
 
 - "geographies", or "groups", or "variables" (use include_values = TRUE)
 
-- Confirm here that Block-Level is for the Decennial (PL or DHC) survey only
+- Can confirm here that Block-Level is for the Decennial (PL or DHC) survey only
 
+What might we reasonably conclude about the rows with `NA` in the `vintage` field? Consider (1) what we know from their website about some of the rows (`titles`), and  (2) what we see in the `temporal` field. 
+
+## Example: Most recent ACS 5-Year
+
+Heads up: This will take a bit to run... so keep it as an object.
 ```{r}
-#| eval: false
-#| echo: true
+#| label: list.census.metadata
+#| eval: true
 vars_acs5 = listCensusMetadata(
-  name = "acs/acs5",
+  "acs/acs5",
   vintage = 2024,
   key = NULL,
-  type = "variables",
-  # group = NULL,
-  # variable_name = NULL,
-  # include_values = FALSE
+  type = "variables" #  list of variable names and descriptions 
 )
 ```
+Once you have a sense of which survey and which data elements are relevant...
 
-## Need to know where you're looking
+## Where are your geographies of interest? 
 
-`"What are some characteristics of our neighborhoods?"`
+*"What are some characteristics of our neighborhoods?"*
 
-Requires knowing the census location of the programs!
+Requires knowing the census 'address' of the programs!
 
-## Geocode One Location for ACS
+You can visit [geocoding.geo.census.gov](https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?form)...
 
-[Find Geographies for One Address](https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?form)
+- This "point and click" tool makes sense for one or two addresses
 
-- State, County, Tract, Block Group
+- But what about thousands of addresses? 
 
-## Geocode with `tidygeocoder::geo()`
+## Geocode with `tidygeocoder`
 
-The geocode function utilizes this function on addresses contained in dataframes.
+The functions in this package work on one address, or a whole dataframe.
 
-Let's do it!
+Let's see what can be done with one address, and with batches. 
 
 ```{r}
 #| label: geocode.one
@@ -654,14 +654,21 @@ Let's do it!
 
 library(sf) #Handles shapefiles
 
-baker_r <- geo("4450 Harrisburg Blvd, Houston TX") 
+# geo() wraps addresses given as charater strings
+baker_r <- geo("4450 Harrisburg Blvd, Houston TX", 
+               method = "census", full_results = TRUE) 
 
-baker_r_sf <- st_as_sf(baker_r, coords = c("long", "lat"),
-  crs = 4326) # Coord Reference System
+#View(baker_r)
 
+# Translate the object into shapefile/space
+baker_r_sf <- st_as_sf(baker_r, 
+  coords = c("long", "lat"),
+  crs = 4326) # Coord Reference System makes maps 'behave'
+
+# Draw the radius within 5km (5000 m)
 br_5km <- baker_r_sf |>  st_buffer(5000) 
 ```
-
+## The fastest map you've ever coded
 ```{r}
 #| label: geocode.one.mapview
 #| eval: true
@@ -671,11 +678,13 @@ br_5km <- baker_r_sf |>  st_buffer(5000)
 mapview(br_5km) + mapview(baker_r_sf)
 ```
 
-## Let's see their neighbors
+## Let's see our neighbors
 
-Since now we have an input area representing the 5 kilometers around the address, we can pass this as the `filter_by` argument in `get_decennial()` or `get_acs()`.
+We've drawn the circle, so let's see who is inside it. 
 
-This gives back the Census blocks within 5km (5000 meters) of the address without any additional need for spatial overlay.
+Now we have `br_5km`, an input area representing the 5 kilometers around the address. So we can use this as the `filter_by` argument in `get_decennial()` or `get_acs()`.
+
+This gives back the Census block groups within 5km (5000 meters) of the address without any additional need for spatial overlay.
 
 ```{r}
 #| label: pull.blockpop.dhc
@@ -684,8 +693,9 @@ This gives back the Census blocks within 5km (5000 meters) of the address withou
 #| code-overflow: wrap
 #| output: true
 
+# Using the same tidycensus::get_decennial() from earlier
 block_pop_brc <- get_decennial(
-  geography = "block",
+  geography = "block group",
   variables = "P1_001N",
   state = "TX",
   county = "Harris County",
@@ -696,7 +706,9 @@ block_pop_brc <- get_decennial(
 ) 
 ```
 
-## Map!
+## Map and Summarize
+
+Per 2020 DHC, about 200,000 people live within 5km of this address.  
 
 ```{r}
 #| label: pull.blockpop.dhc2
@@ -710,23 +722,29 @@ mapview(block_pop_brc)
 sum(block_pop_brc$value) 
 ```
 
-## Now let's try all BR Sites!
+## Now let's geocode all the Head Start sites
 
+First we'll read in the CSV, converting it to a dataframe. 
+
+(Your read_csv path should be where you downloaded the file, in slide 2.)
 ```{r}
 #| label: geocode.brsites
 #| eval: true
 #| echo: true
 #| code-overflow: wrap
 #| output: false
-
+# Read in the file, wrangle into tibble without rownames
 all_hs = read_csv("~/R/pricele2.github.io/blog/census-workshop/data/all_ehs_hs_tx_locations.csv") |> as_tibble() |> 
   rename(Add1 = 6) 
-  # |> mutate(Mail_Address = str_c(Add1, Add2, sep = " "))
 
 colnames(all_hs)
+
+dim(all_hs)
+
+colSums(is.na(all_hs)) #missing values ~ probably need data cleaning
 ```
 
-## Next
+## Geocode these 1267 sites
 
 ```{r}
 #| label: hs_geos3
@@ -735,9 +753,9 @@ colnames(all_hs)
 #| code-overflow: wrap
 #| output: true
 
-hs_geos = geocode(  # Note the full word for the full dataset 
-  all_hs, 
-  # street = "Mail_Address",
+# Note the function geocode, not geo, used for a dataframe
+hs_geos = geocode(
+  all_hs, # name of the dataframe
   street = "Add1",
   city = "city",
   state = "state",
@@ -745,12 +763,21 @@ hs_geos = geocode(  # Note the full word for the full dataset
   method = "census",
   full_results = TRUE,
   api_options = list(census_return_type = "geographies")
-)
+) 
+colnames(hs_geos)
 
-colSums(is.na(hs_geos)) #152 missing, probably need data cleaning
+hs_geos = hs_geos |> select(grant_Number, program_type_label, recipient_name, service_location_name, input_address, funded_slots, status, lat, long, ends_with("fips"), starts_with("match"), starts_with("census"), starts_with("tiger"))
+
+```
+Consider: Why does it confirm `Passing 983 addresses` instead of 1267?
+
+```{r}
+table(hs_geos$match_type)
 ```
 
 ## Filter for `ws_gulf_coast` from earlier
+
+You could also do this earlier, and spend your daily API calls more frugally. But then you have to deal with string variables and 13 county names. 
 
 ```{r}
 #| label: geocode.brsites.filter
@@ -758,18 +785,28 @@ colSums(is.na(hs_geos)) #152 missing, probably need data cleaning
 #| echo: true
 #| code-overflow: wrap
 #| output: true
-#| 
-hs_geos2 = hs_geos |> filter(state_fips == "48") |>  #drops the rows with "NA" returned
-  filter(county_fips %in% ws_gulf_coast) 
-  
+
+# Filter the inherited object for only locations in our 13 counties
+hs_geos2 = hs_geos |> 
+  filter(state_fips == "48") |>  #drops the rows with "NA" returned
+  filter(county_fips %in% ws_gulf_coast) #drops the rowsthat aren't in our list
+
+length(unique(hs_geos2$input_address))
+
+# Translate the object into shapefile/space
 hs_geos_sf = st_as_sf(hs_geos2, 
       coords = c("long", "lat"),
       crs = 4326) 
-  
-hs_all_5km <- hs_geos_sf |> st_buffer(5000) 
 
-# mapview(hs_all_5km) + mapview(hs_geos_sf)
+# Use the same function as before to find geographies within 5km (5000 m) 
+hs_all_5km <- hs_geos_sf |> 
+  st_buffer(5000) 
+
+# And use this (computationally taxing) function to map 'em 
+# mapview(hs_all_5km) 
 ```
+
+There are 117 unique `input_address`es but 152 rows. What do we know about this dataframe that explains this?
 
 ## What about Children Under 5 In Poverty?
 
@@ -782,6 +819,7 @@ hs_all_5km <- hs_geos_sf |> st_buffer(5000)
 
 vars_acs = load_variables(2024, "acs5") # Searched for "Under 5"
 
+# All of Texas
 block_pop_wsgc_u5_pov <- get_acs(
   geography = "tract",
   variables = c("B17001_004", "B17001_018"), 
@@ -790,61 +828,41 @@ block_pop_wsgc_u5_pov <- get_acs(
   geometry = TRUE
   )  
 
-str_length(block_pop_wsgc_u5_pov$GEOID[1]) # 11
+str_length(block_pop_wsgc_u5_pov$GEOID[1]) # 11 characters
 
-mapview(block_pop_wsgc_u5_pov)
+# Can create a computationally expensive map... 
+# mapview(block_pop_wsgc_u5_pov) 
 
+# Or just pull the number itself
 sum(block_pop_wsgc_u5_pov$estimate) # 388,508 across Texas
 ```
 
-If you wanted to filter for only those tracts within 5KM of location in the 13 counties... how would you go about it?
+## Your turn
 
-```{r}
-#| echo: false
-#| eval: false
-# colnames(block_pop_wsgc_u5_pov) # GEOID is 12 chars
-# 
-# str_length(block_pop_wsgc_u5_pov$GEOID[1])
-# 
-
-# hs_all_5km_2 = hs_all_5km |> 
-# mutate(geoid = str_c(state_fips, county_fips, census_tract, census_block, sep ="")) 
-# 
-# str_length(hs_all_5km_2$geoid[1])
-# 
-# hs_all_5km_2 = hs_all_5km |> 
-# mutate(geoid = str_c(state_fips, county_fips, census_tract, census_block, sep ="")) |> 
-#   mutate(GEOID = str_sub(geoid, 1, 12))
-# 
-# str_length(hs_all_5km_2$GEOID[1])
-#   
-# block_pop_wsgc_u5_pov2 = block_pop_wsgc_u5_pov |> 
-#   filter(GEOID %in% hs_all_5km_2$GEOID)
-
-```
+If you wanted to filter for children under 5 in poverty living only in tracts within 5KM of the Head Start locations in the 13 counties... how would you go about it?
 
 ## Make a Work Plan
 
-- What do I want to learn? What data product holds relevant elements?
+- What do I want to learn?  
 
-- What time point?
+- What data product holds relevant elements?  
 
-- What geographic level is available for this?
+- What geographic level? What time point? 
+
+- Consider tradeoffs 
 
 ## In Conclusion
 
-- Kyle Walker's classes and resources are superb (TCU Professor)
+- Census data can be used to contextualize nearly every program at Baker Ripley, even indirectly. For example: Behavioral Risk Factors data from CDC, [at the tract level](https://www.cdc.gov/places/about/index.html)
 
-- Map mockups or "a draft for feedback" will save you time!
+- Writing queries for analysis, and using API endpoints... are gifts to your future self
 
-- Embrace the nerdery!
+- Your tax dollars pay for Census: Use it with nerdery! 
+
+- Map mock-ups or "a draft for feedback" will save you time with leadership
+
+- Kyle Walker's learning resources are superb
 
 **Thank you!**
 
 - Find me on [LinkedIn](https://www.linkedin.com/in/lauren-price-data/)
-
-<!-- ## Behavior Risk Factor Surveillance System (BRFSS) -->
-
-<!-- ## Health Datasets by Tract  -->
-
-<!-- Glossary at https://data.cdc.gov/Survey-Data/Behavior-Risk-Factor-Surveillance-System-BRFSS-Glo/5amh-5sx3/about_data -->
